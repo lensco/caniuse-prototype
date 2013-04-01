@@ -12,7 +12,7 @@
 	<![endif]-->
 </head>
 <body>
-	<nav>
+	<nav role="navigation">
 		<ul class="left">
 			<li><a href="#">About</a></li>
 			<li><a href="#">News</a></li>
@@ -26,7 +26,7 @@
 		</ul>
 	</nav>
 	
-	<section class="search">
+	<section class="search" role="search">
 		Can I use
 		<input type="text" name="feat_search" autocomplete="off" autofocus value="CSS animations">
 		?
@@ -122,7 +122,7 @@
 		<input type="submit" value="Load" onclick="javascript:document.getElementById('import').style.display = 'none';">
 	</section>
 	
-	<article class="feature" id="datauri">
+	<article class="feature" id="datauri" role="article">
 		<a class="permalink" href="#feat=datauri" title="Permanent link to the CSS3 Animation compatibility table">#</a>
 
 		<h1>CSS3 Animation</h1>
@@ -176,7 +176,7 @@
 		</div>
 	</article>
 	
-	<footer>
+	<footer role="contentinfo">
 		<div class="credit left">
 			By <a href="http://twitter.com/Fyrd">@Fyrd</a>, design by <a href="http://twitter.com/lensco">@lensco</a>
 			|
@@ -194,7 +194,7 @@
 		</div>
 	</footer>
 	
-	<section id="index" style="display: none;">
+	<section id="index" style="display: none;" role="navigation">
 		<nav class="right">
 			<ul>
 				<li><a href="#" onclick="javascript:document.getElementById('index').style.display = 'none';"><i class="icon close"></i> Close</a></li>
