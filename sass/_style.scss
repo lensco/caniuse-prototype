@@ -192,6 +192,7 @@ nav {
 	text-align: center;
 	padding: .6em 0;
 	margin: 0 0 10px;
+	font-size: em(18);
 	
 	input {
 		@include appearance(none);
@@ -200,7 +201,7 @@ nav {
 		background: transparent;
 		font: inherit;
 		color: #fff;
-		width: 40%;
+		width: 50%;
 		padding: 0 4px;
 		border-radius: 0;
 		
@@ -213,9 +214,9 @@ nav {
 	.options {
 		color: #fff;
 		color: white(.4);
-		font-size: em(12);
 		padding: 0 0 0 10px;
 		white-space: nowrap;
+		vertical-align: middle;
 		
 		span {
 			display: none;
@@ -227,7 +228,10 @@ nav {
 	
 	@include mobile-landscape {
 		font-size: em(24);
-
+		
+		input {
+			width: 40%;
+			}
 		.options {
 			font-size: em(18, 24);
 
