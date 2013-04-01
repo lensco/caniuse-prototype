@@ -1,6 +1,6 @@
 body { background: #3D3527; background: linear-gradient(-45deg, transparent 50%, rgba(255, 255, 255, 0.02) 50%, rgba(255, 255, 255, 0.01)), -webkit-gradient(linear, 0% 50%, 100% 50%, color-stop(90%, transparent), color-stop(90%, rgba(255, 255, 255, 0.03))), #3d3527; background: -webkit-linear-gradient(-45deg, transparent 50%, rgba(255, 255, 255, 0.02) 50%, rgba(255, 255, 255, 0.01)), -webkit-linear-gradient(left, transparent 90%, rgba(255, 255, 255, 0.03) 90%), #3d3527; background: -moz-linear-gradient(-45deg, transparent 50%, rgba(255, 255, 255, 0.02) 50%, rgba(255, 255, 255, 0.01)), -moz-linear-gradient(left, transparent 90%, rgba(255, 255, 255, 0.03) 90%), #3d3527; background: -o-linear-gradient(-45deg, transparent 50%, rgba(255, 255, 255, 0.02) 50%, rgba(255, 255, 255, 0.01)), -o-linear-gradient(left, transparent 90%, rgba(255, 255, 255, 0.03) 90%), #3d3527; background: linear-gradient(-45deg, transparent 50%, rgba(255, 255, 255, 0.02) 50%, rgba(255, 255, 255, 0.01)), linear-gradient(left, transparent 90%, rgba(255, 255, 255, 0.03) 90%), #3d3527; }
 
-html { height: 100%; -webkit-text-size-adjust: 100%; }
+html { height: 100%; overflow-y: scroll; -webkit-text-size-adjust: 100%; }
 
 body, form, ol, ul, li, dl, dt, dd, td, th, tr, fieldset { margin: 0; padding: 0; }
 

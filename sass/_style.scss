@@ -1,7 +1,7 @@
 // CSS RESET
 // ----------------------------------------------------
 
-html { height: 100%; -webkit-text-size-adjust: 100%; } // rubberband scrolling on iOS5 + fix device orientation zoom bug
+html { height: 100%; overflow-y: scroll; -webkit-text-size-adjust: 100%; } // rubberband scrolling on iOS5 + fix device orientation zoom bug
 body, form, ol, ul, li, dl, dt, dd, td, th, tr, fieldset { margin: 0; padding: 0; }
 h1, h2, h3, h4, h5, h6, p, pre, blockquote, address { margin: 0 0 1em 0; padding: 0; }
 ul { list-style: none; }
