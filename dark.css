@@ -136,7 +136,7 @@ footer .twitter-follow-button { margin: 0 20px 0 0; }
   .feature .specification { font-size: 1.25em; }
   .feature .description { font-size: 1.125em; } }
 @media (min-width: 1024px) { .feature .supportStats { font-size: 1.3125em; position: absolute; right: 0; top: 20px; } }
-.feature .tableWrapper { max-width: 100%; overflow: auto; margin: 0 0 20px; }
+.feature .tableWrapper { max-width: 100%; overflow: auto; margin: 0 0 20px; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; }
 .feature table { width: 100%; border-spacing: 2px; border-collapse: separate; font-size: 0.8125em; }
 .feature td, .feature th { font-weight: 300; width: 10%; min-width: 4.2em; padding: 4px 6px; }
 .feature thead th { border-bottom: 4px solid #dddddd; border-bottom: 4px solid rgba(0, 0, 0, 0.12); vertical-align: bottom; }

@@ -485,6 +485,7 @@ footer {
 		max-width: 100%;
 		overflow: auto;
 		margin: 0 0 20px;
+		@include user-select();
 		}
 		table {
 			width: 100%;
