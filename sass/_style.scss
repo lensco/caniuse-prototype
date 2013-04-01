@@ -58,6 +58,8 @@ input {
 		border: 0;
 		padding: .3em 1em;
 		font-size: 1.2em;
+		-webkit-appearance: none;
+		border-radius: 0;
 		
 		&:hover,
 		&:active,
