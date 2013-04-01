@@ -1,0 +1,755 @@
+// CSS RESET
+// ----------------------------------------------------
+
+html { height: 100%; -webkit-text-size-adjust: 100%; } // rubberband scrolling on iOS5 + fix device orientation zoom bug
+body, form, ol, ul, li, dl, dt, dd, td, th, tr, fieldset { margin: 0; padding: 0; }
+h1, h2, h3, h4, h5, h6, p, pre, blockquote, address { margin: 0 0 1em 0; padding: 0; }
+ul { list-style: none; }
+ol { margin-bottom: 1em; }
+ol > li { margin-left: 2em; }
+img, fieldset { border: 0; -ms-interpolation-mode: bicubic; }
+table { border-collapse: collapse; border-spacing: 0; empty-cells: show; font-size: 100%; }
+th { text-align: center; }
+tbody th { text-align: left; }
+a:hover, a:active { outline: 0; } // Accessible focus treatment: people.opera.com/patrickl/experiments/keyboard/test
+input::-moz-focus-inner { border: 0; }
+* { @include box-sizing(border-box); }
+
+
+// BASICS
+// ----------------------------------------------------
+
+body {
+	font: 100%/1 "Open Sans", sans-serif;
+	font-weight: 300;
+	background-size: 200px 200px, 10px 10px;
+	padding: 0 3% 30px;
+	max-width: 1800px;
+	margin: 0 auto;
+	
+	@include tablet {
+		background-size: 400px 400px, 10px 10px;
+		padding: 0 5% 40px;
+		}
+	}
+
+a {
+	color: $link;
+	text-decoration: none;
+	}
+
+h1 {
+	font-weight: 300;
+	font-size: em(36);
+	}
+h2 {
+	font-weight: 300;
+	font-size: em(24);
+	margin: 0 0 .5em;
+	}
+
+input {
+	font: inherit;
+	}
+	input[type=submit],
+	input[type=button] {
+		background: #fff;
+		color: $link;
+		border: 0;
+		padding: .3em 1em;
+		font-size: 1.2em;
+		
+		&:hover,
+		&:active,
+		&:focus {
+			cursor: pointer;
+			color: #fff;
+			background: $index;
+			}
+		}
+	input[type=checkbox] {
+		margin: 0 3px 0 0;
+		}
+
+.cf {
+	&:before,
+	&:after {
+		display: table;
+		content: "";
+		}
+		&:after {
+			clear: both;
+			}
+	}
+
+.left {
+	float: left;
+	}
+
+.right {
+	float: right;
+	}
+
+
+// LAYOUT
+// ----------------------------------------------------
+
+nav {
+	@extend .cf;
+	margin: 0 0 10px;
+	position: relative;
+	
+	@include tablet {
+		margin: 0 0 20px;
+		}
+	
+	li {
+		display: inline-block;
+		
+		> a {
+			display: inline-block;
+			color: $nav;
+			padding: .5em .7em .6em;
+			margin: 0 3px 0 0;
+			background: $nav-bg;
+			@include ie-rgba($nav-bg);
+			
+			&:hover {
+				background: $nav-hover;
+				color: #fff;
+				}
+			
+			&.index {
+				background: $index;
+				color: #fff;
+				margin: 0;
+				
+				&:hover {
+					background: #fff;
+					color: $index;
+					}
+				}
+			span,
+			.icon {
+				display: none;
+				}
+			
+			@include mobile-landscape {
+				span {
+					display: inline;
+					}
+				.icon {
+					display: inline-block;
+					font-size: em(14);
+					}
+				}
+			@include tablet-mini {
+				font-size: em(20);
+				
+				.icon {
+					font-size: em(16, 20);
+					}
+				}
+			@include tablet {
+				font-size: em(24);
+				margin: 0 6px 0 0;
+				
+				.icon {
+					font-size: em(20, 24);
+					}
+				}
+			}
+		}
+
+	.news {
+		position: absolute;
+		top: .95em;
+		left: 12em;
+		right: 21em;
+		height: 1.3em;
+		color: $nav;
+		font-size: em(18);
+		display: none;
+		@include ellips;
+		
+		&:hover {
+			color: $contrast;
+			}
+		
+		.date {
+			color: rgba($nav, .4);
+			}
+		
+		@include tablet-landscape {
+			display: block;
+			}
+		}
+	}
+
+.search {
+	background: $search;
+	color: #fff;
+	text-align: center;
+	padding: .6em 0;
+	margin: 0 0 10px;
+	
+	input {
+		@include appearance(none);
+		border: 0;
+		border-bottom: 1px solid #fff;
+		background: transparent;
+		font: inherit;
+		color: #fff;
+		width: 40%;
+		padding: 0 4px;
+		border-radius: 0;
+		
+		&:focus {
+			outline: none;
+			background: white(.2);
+			}
+		}
+	
+	.options {
+		color: #fff;
+		color: white(.4);
+		font-size: em(12);
+		padding: 0 0 0 10px;
+		white-space: nowrap;
+		
+		span {
+			display: none;
+			}
+		&:hover {
+			color: #fff;
+			}
+		}
+	
+	@include mobile-landscape {
+		font-size: em(24);
+
+		.options {
+			font-size: em(18, 24);
+
+			span {
+				display: inline;
+				}
+			}
+		}
+	@include tablet {
+		font-size: em(30);
+		margin: 0 0 20px;
+		
+		input {
+			border-bottom-width: 2px;
+			}
+		.options {
+			font-size: 24px;
+			}
+		}
+	@include tablet-landscape {
+		font-size: em(48);
+		}
+	}
+
+.searchPanel {
+	background: $search;
+	margin: -10px 0 10px;
+	padding: 8px 16px 24px;
+	font-size: em(12);
+	color: #fff;
+	overflow: hidden;
+	line-height: 1.5;
+	
+	a {
+		color: #fff;
+		}
+	fieldset {
+		padding: 0 0 20px 0;
+		}
+		#cats {
+			float: left;
+			padding: 0 20px 20px 0;
+			width: 40%;
+			}
+		legend {
+			background: white(.2);
+			@include ie-rgba(white(.2));
+			color: #fff;
+			padding: .1em .5em;
+			border-bottom: .8em solid $search; // workaround for bug where Safari doesn't render bottom margin on legends
+			}
+		.optwrap {
+			float: left;
+			width: 40%;
+			
+			&:last-child {
+				width: 60%;
+				padding: 0 0 0 10px;
+				}
+			div {
+				padding: 5px 0 0 15px;
+				font-size: 10px;
+				}
+			}
+		input[type=range] {
+			margin: 10px 0;
+			width: 70%;
+			}
+		input[type=submit],
+		input[type=button] {
+			margin: 20px 0 0;
+			}
+			.import {
+				clear: both;
+				float: left;
+				}
+			.save {
+				float: right;
+				}
+		.dim {
+			color: white(.5);
+			}
+	
+	@include tablet {
+		margin: -20px 0 20px;
+		padding: 10px 20px 30px;
+		font-size: em(16);
+		
+		fieldset {
+			float: left;
+			padding: 0 20px 20px 0;
+			}
+			#cats {
+				width: 25%;
+				}
+			#statuses {
+				width: 35%;
+				}
+			#agents {
+				width: 40%;
+				}
+			#eras,
+			#misc {
+				width: 50%;
+				}
+		}
+	@include desktop {
+		#cats {
+			width: 15%;
+			}
+		#statuses {
+			width: 17%;
+			}
+		#agents,
+		#eras {
+			width: 25%;
+			}
+		#misc {
+			width: 18%;
+			padding-right: 0;
+			}
+		}
+	}
+
+article {
+	background: $article;
+	padding: 16px;
+	margin: 0 0 20px;
+	position: relative;
+	
+	@include tablet {
+		padding: 20px;
+		margin: 0 0 40px;
+		}
+	}
+
+footer {
+	line-height: 2;
+	@extend .cf;
+	color: $footer;
+	font-size: em(14);
+	
+	a {
+		color: $contrast;
+		}
+	
+	.social {
+		margin: 5px 0 0;
+		}
+		.twitter-follow-button {
+			margin: 0 20px 0 0;
+			}
+	
+	@include tablet-landscape {
+		font-size: em(16);
+		}
+	}
+
+
+// FEATURE BLOCK
+// ----------------------------------------------------
+
+.feature {
+	padding-top: 36px;
+	
+	.permalink {
+		background: $permalink;
+		position: absolute;
+		left: 16px;
+		top: 0;
+		width: 32px;
+		height: 32px;
+		padding: 3px 0 0;
+		text-align: center;
+		color: #fff;
+		font-size: em(25);
+		
+		&:hover {
+			background: #fff;
+			color: $permalink;
+			}		
+		}
+	h1 {
+		display: inline;
+		font-size: em(24);
+		margin: 0 20px 0 0;
+		line-height: 1.4;
+		}
+	.specification {
+		color: #999;
+		white-space: nowrap;
+		
+		.icon {
+			font-size: 16px;
+			}
+			&.rec	{ color: $green; }
+			&.cr	{ color: $partial; }
+			&.wd	{ color: shade($red, 15); }
+			&.other	{ color: #999; }
+		}
+	.description {
+		font-size: em(14);
+		margin: 1em 0;
+		}
+	.supportStats {
+		font-size: em(14);
+		white-space: nowrap;
+		
+		.support {
+			color: $green;
+			margin: 0 0 0 6px;
+			}
+		.partial {
+			color: $partial-stats;
+			}
+		.total {
+			display: inline-block;
+			background: darken($green, 10);
+			color: #fff;
+			padding: .5em;
+			}
+		}
+
+	@include tablet {
+		padding-top: 20px;
+		
+		.permalink {
+			left: -32px;
+			top: 22px;
+			}
+		h1 {
+			margin-top: 0;
+			font-size: em(36);
+			line-height: 1;
+			}
+		.specification {
+			font-size: em(20);
+			}
+		.description {
+			font-size: em(18);
+			}
+		}
+	@include tablet-landscape {
+		.supportStats {
+			font-size: em(21);
+			position: absolute;
+			right: 0;
+			top: 20px;
+			}
+		}
+
+	
+	/* TABLE */
+	.tableWrapper {
+		max-width: 100%;
+		overflow: auto;
+		margin: 0 0 20px;
+		}
+		table {
+			width: 100%;
+			border-spacing: 2px;
+			border-collapse: separate;
+			font-size: em(13);
+			}
+			td,
+			th {
+				font-weight: 300;
+				width: 10%;
+				min-width: 4.2em;
+				padding: 4px 6px;
+				}
+			thead {
+				th {
+					border-bottom: 4px solid #ddd;
+					border-bottom: 4px solid black(.12);
+					vertical-align: bottom;
+	
+					&:first-child {
+						min-width: 8.8em;
+						}
+					}
+	
+				.ie			{ border-bottom-color: $ie; }
+				.firefox,
+				.and_ff		{ border-bottom-color: $firefox; }
+				.chrome,
+				.and_chrome	{ border-bottom-color: $chrome; }
+				.safari,
+				.ios_saf	{ border-bottom-color: $safari; }
+				.opera,
+				.op_mini,
+				.op_mob		{ border-bottom-color: $opera; }
+				.android	{ border-bottom-color: $android; }
+				.bb			{ border-bottom-color: $blackberry; }
+				}
+			tbody {
+				th,
+				td {
+					background: black(.04);
+					@include ie-rgba(black(.04));
+					}
+					.e0 th {
+						background: black(.12);
+						@include ie-rgba(black(.12));
+						}
+					th {
+						text-align: right;
+						padding-right: 10px;
+						}
+					td {
+						background: black(.03);
+						@include ie-rgba(black(.03));
+						color: #fff;
+						position: relative;
+						}
+						.y { background: $green; }
+						.n { background: $red; }
+						.a { background: $partial; }
+		
+				tr:hover {
+					td {
+						background: black(.09);
+						@include ie-rgba(black(.09));
+						}
+						.y { background: shade(saturate($green, 25), 30); }
+						.n { background: shade(saturate($red, 15), 15); }
+						.a { background: shade(saturate($partial, 15), 20); }
+					}
+				}
+				td.y:hover:after,
+				td.n:hover:after,
+				td.a:hover:after {
+					content: attr(data-tooltip);
+					position: absolute;
+					z-index: 20;
+					top: -18px;
+					right: 10px;
+					padding: 3px 4px 4px;
+					white-space: nowrap;
+					background: #fff;
+					color: #000;
+					font-size: em(14);
+					@include box-shadow(0 0 0 2px black(.2));
+					}
+			.pre {
+				float: right;
+				background: #e6ea69;
+				color: #222;
+				font-size: 8px;
+				font-weight: 400;
+				display: inline-block;
+				padding: 2px;
+				margin: 4px 0 0 6px;
+				}
+			
+			@include tablet {
+				.tableWrapper {
+					margin: 0 0 30px;
+					}
+					table {
+						font-size: em(16);
+						}
+						td,
+						th {
+							padding: 8px;
+							}
+				}
+			@include desktop {
+				table {
+					font-size: em(18);
+					}
+				td,
+				th {
+					padding: 11px 8px;
+					}
+					.pre {
+						font-size: 9px;
+						}
+				}
+	
+	/* TABS */
+	.feature-tab-container {
+		li {
+			display: inline-block;
+			padding: 10px 4px 10px 8px;
+			background: $tabs-light;
+			position: relative;
+			margin: 0 4px 0 0;
+			font-size: em(13);
+			
+			&:after {
+				content: "";
+				position: absolute;
+				z-index: 2;
+				right: -14px;
+				bottom: 0;
+				border-left: 14px solid $tabs-light;
+				border-top: 34px solid transparent;
+				}
+				
+			&.active,
+			&:hover {
+				background: $tabs;
+				z-index: 3;
+				cursor: pointer;
+
+				&:after {
+					border-left: 14px solid $tabs;
+					}
+				}
+				
+			@include tablet {
+				font-size: em(18);
+				padding: 10px 8px 10px 12px;
+				
+				&:after {
+					border-top-width: 38px;
+					}
+				}
+			}
+		}
+	
+	/* TAB CONTENTS */
+	.feature-panel-container {
+		margin: 0 -16px -16px;
+		padding: 20px 16px;
+		background: $tabs;
+		font-size: em(13);
+		line-height: 1.3;
+		
+		@include tablet {
+			margin: 0 -20px -20px;
+			padding: 30px 20px;
+			font-size: em(16);
+			}
+		}
+	}
+	
+
+// INDEX
+// ----------------------------------------------------
+
+#index {
+	position: absolute;
+	z-index: 10;
+	top: 0;
+	left: 0;
+	width: 100%;
+	padding: 70px 5% 40px;
+	background: $index;
+	color: #fff;
+	
+	nav {
+		margin: -70px 0 0;
+		
+		a {
+			background: #fff;
+			color: $index;
+			margin: 0;
+			
+			&:hover {
+				color: #000;
+				}
+			}
+		}
+		
+	> div {
+		float: left;
+		min-width: 290px;
+		line-height: 1.5;
+		padding: 0 20px;
+		
+		@include tablet {
+			width: 50%;
+			}
+		@include desktop {
+			width: 33%;
+			}
+		@include mq(1400px) {
+			width: 25%;
+			}
+		@include mq(1600px) {
+			width: 20%;
+			}
+		}
+		ol {
+			margin: 0 0 24px;
+			font-size: em(13);
+			
+			@include tablet-mini {
+				font-size: em(16);
+				}
+			}
+		li {
+			list-style: square;
+			}
+			a {
+				color: #fff;
+				
+				&:hover {
+					color: #fd0;
+					}
+				}
+	}
+
+
+
+// ICONS
+// ----------------------------------------------------
+
+@include font-face("caniuse", font-files("caniuse.woff"), "caniuse.eot");
+
+.icon {
+	display: inline-block;
+	font-family: "caniuse";
+	font-weight: normal !important;
+	font-style: normal !important;
+	text-transform: none !important;
+	-webkit-font-smoothing: antialiased;
+	}
+
+.icon.index:before		{ content: "\f001"; }
+.icon.settings:before	{ content: "\f002"; }
+.icon.spec:before		{ content: "\f003"; }
+.icon.close:before		{ content: "\f007"; }

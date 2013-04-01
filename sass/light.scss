@@ -1,0 +1,24 @@
+@import "common", "mixins", "compass/css3";
+
+// THEME
+
+$index: $red;
+$search: $ie;
+$link: $blue;
+$contrast: $blue;
+$nav: #000;
+$nav-bg: black(.06);
+$nav-hover: $ie;
+$permalink: $green;
+$article: #fff;
+$footer: #000;
+$partial-stats: $partial;
+$tabs: #ccc;
+$tabs-light: #eee;
+
+body {
+	background: lighten(#ededeb, 3);
+	@include background(linear-gradient(-45deg, transparent 50%, white(.4) 50%, white(.2)), linear-gradient(left, transparent 90%, black(.03) 90%), lighten(#ededeb, 3));
+	}
+
+@import "_style";

@@ -1,0 +1,24 @@
+@import "common", "mixins", "compass/css3";
+
+// THEME
+
+$index: #DB8000;
+$search: #DB5600;
+$link: $search;
+$contrast: #DB9E00;
+$nav: #fff;
+$nav-bg: white(.1);
+$nav-hover: $index;
+$permalink: $search;
+$article: #f2e8d5;
+$footer: mix(#fff, #3D3527, 50);
+$partial-stats: #7C8C00;
+$tabs: darken(#f2e8d5, 15);
+$tabs-light: tint($tabs, 40);
+
+body {
+	background: #3D3527;
+	@include background(linear-gradient(-45deg, transparent 50%, white(.02) 50%, white(.01)), linear-gradient(left, transparent 90%, white(.03) 90%), #3D3527);
+	}
+
+@import "_style";
