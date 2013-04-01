@@ -123,7 +123,7 @@
 	</section>
 	
 	<article class="feature" id="datauri">
-		<a class="permalink" href="#feat=datauri" title="Permanent link to just this table">#</a>
+		<a class="permalink" href="#feat=datauri" title="Permanent link to the CSS3 Animation compatibility table">#</a>
 
 		<h1>CSS3 Animation</h1>
 		<a class="specification wd" href="http://www.ietf.org/rfc/rfc2397.txt">
