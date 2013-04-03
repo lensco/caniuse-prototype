@@ -48,6 +48,10 @@ h2 {
 	margin: 0 0 .5em;
 	}
 
+fieldset {
+	float: left;
+}
+
 input {
 	font: inherit;
 	}
@@ -91,6 +95,10 @@ input {
 .right {
 	float: right;
 	}
+
+.hidden {
+	display: none;
+}
 
 
 // LAYOUT
@@ -258,7 +266,8 @@ nav {
 		}
 	}
 
-.searchPanel {
+.searchPanel,
+#options_compare {
 	background: $search;
 	margin: -10px 0 10px;
 	padding: 8px 16px 24px;
@@ -277,7 +286,11 @@ nav {
 			float: left;
 			padding: 0 20px 20px 0;
 			width: 40%;
-			}
+			
+            p {
+                margin-bottom: 0;
+            }
+		}
 		legend {
 			background: white(.2);
 			@include ie-rgba(white(.2));
@@ -358,6 +371,15 @@ nav {
 		}
 	}
 
+#options_compare {
+    background-color: #db8000;
+    
+    fieldset {
+        max-height: 22rem;
+        overflow-y: auto;
+    }
+}
+
 #top_ad {
 	text-align: center;
 	margin-bottom: 20px;
@@ -437,6 +459,20 @@ footer {
 			color: $permalink;
 			}		
 		}
+		
+     .heading_wrap h1 {
+        width: 100%;
+    }
+
+     .heading_wrap > * {
+        display: table-cell;
+    }
+
+     a.specification {
+        padding-right: 1em;
+        width: 10%;
+    }
+		
 	h1 {
 		display: inline;
 		font-size: em(24);
@@ -500,13 +536,18 @@ footer {
 	@include tablet-landscape {
 		.supportStats {
 			font-size: em(21);
-			position: absolute;
-			right: 0;
-			top: 20px;
 			}
 		}
+    
+    // Used for listed sub-features
+    dl {
+        margin: 1em 0;
 
-	
+        dd {
+            display: inline-block;
+        }
+    }
+
 	/* TABLE */
 	.tableWrapper {
 		max-width: 100%;
@@ -519,6 +560,7 @@ footer {
 			border-spacing: 2px;
 			border-collapse: separate;
 			font-size: em(13);
+			margin-bottom: .5em;
 			}
 			td,
 			th {
@@ -646,6 +688,13 @@ footer {
 			margin: 0 4px 0 0;
 			font-size: em(13);
 			
+            a {
+                float: right;
+                position: relative;
+                top: -1.5em;
+                font-size: 0.8125rem;
+            }
+			
 			&:after {
 				content: "";
 				position: absolute;
@@ -692,7 +741,35 @@ footer {
 			font-size: em(16);
 			}
 		}
+		
+		textarea {
+            width: 100%;
+            height: 100px;
+            font-family: "Open Sans", sans-serif;
+            font-size: 1rem;
+		}
 	}
+
+// Links under feature blocks
+#show_links,
+#showall {
+	text-align: center;
+	margin-bottom: 40px;
+}
+
+#showall {
+	margin-bottom: 20px;
+}
+
+#show_links a,
+#showall a {
+	background-color: #db5600;
+	color: white;
+	display: inline-block;
+	padding: .5em;
+	margin: 0 3em;
+	font-size: 1.5em;
+}
 	
 
 // INDEX
@@ -782,154 +859,13 @@ footer {
 .icon.spec:before		{ content: "\f003"; }
 .icon.close:before		{ content: "\f007"; }
 
-
-// STYLES TO BE CLEANED UP
+// BROWSER COMPARISON
 // ----------------------------------------------------
-
-.feature .feature-tab-container a {
-	float: right;
-	position: relative;
-	top: -1.5em;
-	font-size: 0.8125rem;
-}
-
-#options label, 
-fieldset label {
-	display: block;
-}
-
-fieldset {
-	float: left;
-}
-
-#cats p {
-	margin-bottom: 0;
-}
-
-.feature-panel-container textarea {
-	width: 100%;
-	height: 100px;
-	font-family: "Open Sans", sans-serif;
-	font-size: 1rem;
-}
-
-#wciu_summary td {
-	color: #000;
-}
-
-.feature dl {
-	margin: 1em 0;
-}
-
-.feature dd {
-	display: inline-block;
-}
-
-.feature table.main {
-	margin-bottom: .5em;
-}
-
-#show_links,
-#showall {
-	text-align: center;
-	margin-bottom: 40px;
-}
-
-#showall {
-	margin-bottom: 20px;
-}
-
-#show_links a,
-#showall a {
-	background-color: #db5600;
-	color: white;
-	display: inline-block;
-	padding: .5em;
-	margin: 0 3em;
-	font-size: 1.5em;
-}
-
-.search input:focus {
-	outline: none;
-}
-
-section.panel {
-	background-color: #ede1cc;
-}
-
-.panel {
-	padding: .5em;
-	margin-bottom: 1em;
-}
-
-.panel h1 {
-	margin: 1em 20px;
-}
-
-.panel p {
-	margin: 1em 20px;
-}
-
-.hidden {
-	display: none;
-}
-
-.table_wrap {
-	overflow-x: auto;
-}
-
-.feature .heading_wrap h1 {
-	width: 100%;
-}
-
-.feature .heading_wrap > * {
-	display: table-cell;
-}
-
-.feature a.specification {
-	padding-right: 1em;
-	width: 10%;
-}
-
-.feature .supportStats {
-	position: static;
-}
-
-#options_compare {
-	background-color: #db8000;
-	overflow: auto;
-}
-
-#options_compare p.browser_compare_note {
-	color: white;
-	font-size: 1.5rem;
-	padding: 1.5rem 0 0 1.5rem;
-}
-
-#options_compare a { color: #fff; }
-#options_compare fieldset { padding: 0 20px 20px 20px; }
-#options_compare label, 
-#options_compare p { line-height: 1.5em; }
-#options_compare legend { background: rgba(255, 255, 255, 0.2); color: #fff; padding: .1em .5em; margin: 0 0 .8em; }
-#options_compare .optwrap { float: left; width: 40%; }
-#options_compare .optwrap:last-child { width: 60%; padding: 0 0 0 10px; }
-#options_compare .optwrap div { padding: 5px 0 0 15px; font-size: 0.625rem; }
-#options_compare input[type=range] { margin: 10px 0; width: 70%; }
-#options_compare input[type=submit], #options_compare input[type=button] { margin: 20px 0 0; }
-#options_compare .import { clear: both; float: left; }
-#options_compare .save { float: right; }
-#options_compare .dim { color: rgba(255, 255, 255, 0.5); }
-
 
 #comparison_wrap {
 	margin: 2em 0;
 	background-color: #ede1cc;
 	padding: 2em;
-}
-
-#options_compare fieldset {
-	max-height: 22rem;
-	overflow-y: auto;
 }
 
 #browser_comparison {
@@ -974,3 +910,33 @@ section.panel {
         .bb			{ border-bottom-color: $blackberry; }    
     }
 }
+
+// STYLES TO BE CLEANED UP
+// ----------------------------------------------------
+
+#options label, 
+fieldset label {
+	display: block;
+}
+
+#wciu_summary td {
+	color: #000;
+}
+
+section.panel {
+	background-color: #ede1cc;
+}
+
+.panel {
+	padding: .5em;
+	margin-bottom: 1em;
+	
+    h1 {
+        margin: 1em 20px;
+    }
+
+    p {
+        margin: 1em 20px;
+    }
+}
+
