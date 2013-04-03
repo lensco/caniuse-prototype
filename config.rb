@@ -16,7 +16,7 @@ relative_assets = true
 line_comments = false
 color_output = false
 
-add_import_path "/Users/lensco/Sites/bootstrap"
+# add_import_path "/Users/lensco/Sites/bootstrap"
 
 # If you prefer the indented syntax, you might want to regenerate this
 # project again passing --syntax sass, or you can uncomment this:

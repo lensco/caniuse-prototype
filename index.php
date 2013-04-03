@@ -26,6 +26,13 @@
 		</ul>
 	</nav>
 	
+	<aside id="top_ad">
+		<!-- ad placeholder code -->
+		<div style=" border: medium none; color: #DB9E00; display: inline-table; height: 15px; margin: 0; padding: 0; position: relative; visibility: visible; width: 728px;">
+			text ads here
+		</div>
+	</aside>
+	
 	<section class="search" role="search">
 		Can I use
 		<input type="text" name="feat_search" autocomplete="off" autofocus value="CSS animations">
@@ -39,21 +46,21 @@
 	<section id="options" class="searchPanel" style="display: none;">
 		<fieldset id="cats">
 			<legend>Category</legend>
-			<label><input type="checkbox" value="All" checked> All</label><br>
-			<label><input type="checkbox" value="CSS" checked> CSS</label><br>
-			<label><input type="checkbox" value="HTML5" checked> HTML5</label><br>
-			<label><input type="checkbox" value="JS API" checked> JS API</label><br>
-			<label><input type="checkbox" value="SVG" checked> SVG</label><br>
+			<label><input type="checkbox" value="All" checked> All</label> 
+			<label><input type="checkbox" value="CSS" checked> CSS</label> 
+			<label><input type="checkbox" value="HTML5" checked> HTML5</label> 
+			<label><input type="checkbox" value="JS API" checked> JS API</label> 
+			<label><input type="checkbox" value="SVG" checked> SVG</label> 
 			<label><input type="checkbox" value="Other" checked> Other</label>
 		</fieldset>
 		<fieldset id="statuses">
 			<legend>Status</legend>
-			<label><input type="checkbox" value="All"> All</label><br>
-			<label><input type="checkbox" value="rec" checked> Recommendation</label><br>
-			<label><input type="checkbox" value="pr" checked> Proposed Rec.</label><br>
-			<label><input type="checkbox" value="cr" checked> Candidate Rec.</label><br>
-			<label><input type="checkbox" value="wd" checked> Working Draft</label><br>
-			<label><input type="checkbox" value="other" checked> Other</label><br>
+			<label><input type="checkbox" value="All"> All</label> 
+			<label><input type="checkbox" value="rec" checked> Recommendation</label> 
+			<label><input type="checkbox" value="pr" checked> Proposed Rec.</label> 
+			<label><input type="checkbox" value="cr" checked> Candidate Rec.</label> 
+			<label><input type="checkbox" value="wd" checked> Working Draft</label> 
+			<label><input type="checkbox" value="other" checked> Other</label> 
 			<label><input type="checkbox" value="unoff"> Unofficial / Note</label>
 		</fieldset>
 		<fieldset id="agents">
@@ -62,22 +69,22 @@
 			<div class="optwrap">
 				<label><input type="checkbox" value="desktop" checked> Desktop</label>
 				<div class="desktop">
-					<label><input type="checkbox" value="ie" checked> IE</label><br>
-					<label><input type="checkbox" value="firefox" checked> Firefox</label><br>
-					<label><input type="checkbox" value="chrome" checked> Chrome</label><br>
-					<label><input type="checkbox" value="safari" checked> Safari</label><br>
+					<label><input type="checkbox" value="ie" checked> IE</label> 
+					<label><input type="checkbox" value="firefox" checked> Firefox</label> 
+					<label><input type="checkbox" value="chrome" checked> Chrome</label> 
+					<label><input type="checkbox" value="safari" checked> Safari</label> 
 					<label><input type="checkbox" value="opera" checked> Opera</label>
 				</div>
 			</div>
 			<div class="optwrap">
 				<label><input type="checkbox" value="mobile" checked> Mobile</label>
 				<div class="mobile">
-					<label><input type="checkbox" value="ios_saf" checked> iOS Safari</label><br>
-					<label><input type="checkbox" value="op_mini" checked> Opera Mini</label><br>
-					<label><input type="checkbox" value="android" checked> Android Browser</label><br>
-					<label><input type="checkbox" value="op_mob"> Opera Mobile</label><br>
-					<label><input type="checkbox" value="bb" checked> Blackberry Browser</label><br>
-					<label><input type="checkbox" value="and_chr"> Chrome for Android</label><br>
+					<label><input type="checkbox" value="ios_saf" checked> iOS Safari</label> 
+					<label><input type="checkbox" value="op_mini" checked> Opera Mini</label> 
+					<label><input type="checkbox" value="android" checked> Android Browser</label> 
+					<label><input type="checkbox" value="op_mob"> Opera Mobile</label> 
+					<label><input type="checkbox" value="bb" checked> Blackberry Browser</label> 
+					<label><input type="checkbox" value="and_chr"> Chrome for Android</label> 
 					<label><input type="checkbox" value="and_ff"> Firefox for Android</label>
 				</div>
 			</div>
@@ -177,6 +184,11 @@
 	</article>
 	
 	<footer role="contentinfo">
+		<aside id="bottom_ad">
+			<!-- bottom ad placeholder -->
+			<div style="display: inline-block; width:760px; height:90px; background:rgba(128,128,128,0.3)"></div>
+		</aside>
+	
 		<div class="credit left">
 			By <a href="http://twitter.com/Fyrd">@Fyrd</a>, design by <a href="http://twitter.com/lensco">@lensco</a>
 			|
