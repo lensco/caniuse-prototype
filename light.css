@@ -89,10 +89,10 @@ nav .news .date { color: rgba(0, 0, 0, 0.4); }
 
 .searchPanel, #options_compare { background: #2e6792; margin: -10px 0 10px; padding: 8px 16px 24px; font-size: 0.75em; color: #fff; overflow: hidden; line-height: 1.5; }
 .searchPanel a, #options_compare a { color: #fff; }
-.searchPanel fieldset, #options_compare fieldset { padding: 0 0 20px 0; }
+.searchPanel fieldset, #options_compare fieldset { padding: .8em 0 20px 0; }
 .searchPanel #cats, #options_compare #cats { float: left; padding: 0 20px 20px 0; width: 40%; }
 .searchPanel #cats p, #options_compare #cats p { margin-bottom: 0; }
-.searchPanel legend, #options_compare legend { background: rgba(255, 255, 255, 0.2); filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#33FFFFFF,endColorstr=#33FFFFFF); color: #fff; padding: .1em .5em; border-bottom: 0.8em solid #2e6792; }
+.searchPanel legend, #options_compare legend { background: rgba(255, 255, 255, 0.2); filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#33FFFFFF,endColorstr=#33FFFFFF); color: #fff; padding: .1em .5em; }
 .searchPanel .optwrap, #options_compare .optwrap { float: left; width: 40%; }
 .searchPanel .optwrap:last-child, #options_compare .optwrap:last-child { width: 60%; padding: 0 0 0 10px; }
 .searchPanel .optwrap div, #options_compare .optwrap div { padding: 5px 0 0 15px; font-size: 10px; }
@@ -102,7 +102,7 @@ nav .news .date { color: rgba(0, 0, 0, 0.4); }
 .searchPanel .save, #options_compare .save { float: right; }
 .searchPanel .dim, #options_compare .dim { color: rgba(255, 255, 255, 0.5); }
 @media (min-width: 768px) { .searchPanel, #options_compare { margin: -20px 0 20px; padding: 10px 20px 30px; font-size: 1em; }
-  .searchPanel fieldset, #options_compare fieldset { float: left; padding: 0 20px 20px 0; }
+  .searchPanel fieldset, #options_compare fieldset { float: left; padding: 0.8em 20px 20px 0; }
   .searchPanel #cats, #options_compare #cats { width: 25%; }
   .searchPanel #statuses, #options_compare #statuses { width: 35%; }
   .searchPanel #agents, #options_compare #agents { width: 40%; }
@@ -112,7 +112,7 @@ nav .news .date { color: rgba(0, 0, 0, 0.4); }
   .searchPanel #agents, .searchPanel #eras, #options_compare #agents, #options_compare #eras { width: 25%; }
   .searchPanel #misc, #options_compare #misc { width: 18%; padding-right: 0; } }
 
-#options_compare { background-color: #db8000; }
+#options_compare { background-color: #db8000; margin-top: 0; }
 #options_compare fieldset { max-height: 22rem; overflow-y: auto; }
 
 #top_ad { text-align: center; margin-bottom: 20px; }
@@ -187,8 +187,8 @@ footer .twitter-follow-button { margin: 0 20px 0 0; }
 @media (min-width: 1200px) { .feature table { font-size: 1.125em; }
   .feature td, .feature th { padding: 11px 8px; }
   .feature .pre { font-size: 9px; } }
+.feature .feature-tab-container a { float: right; position: relative; top: -1.5em; font-size: 0.8125rem; }
 .feature .feature-tab-container li { display: inline-block; padding: 10px 4px 10px 8px; background: #eeeeee; position: relative; margin: 0 4px 0 0; font-size: 0.8125em; }
-.feature .feature-tab-container li a { float: right; position: relative; top: -1.5em; font-size: 0.8125rem; }
 .feature .feature-tab-container li:after { content: ""; position: absolute; z-index: 2; right: -14px; bottom: 0; border-left: 14px solid #eeeeee; border-top: 34px solid transparent; }
 .feature .feature-tab-container li.active, .feature .feature-tab-container li:hover { background: #cccccc; z-index: 3; cursor: pointer; }
 .feature .feature-tab-container li.active:after, .feature .feature-tab-container li:hover:after { border-left: 14px solid #cccccc; }

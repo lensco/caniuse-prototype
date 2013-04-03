@@ -280,7 +280,7 @@ nav {
 		color: #fff;
 		}
 	fieldset {
-		padding: 0 0 20px 0;
+		padding: .8em 0 20px 0;
 		}
 		#cats {
 			float: left;
@@ -296,7 +296,7 @@ nav {
 			@include ie-rgba(white(.2));
 			color: #fff;
 			padding: .1em .5em;
-			border-bottom: .8em solid $search; // workaround for bug where Safari doesn't render bottom margin on legends
+			// border-bottom: .8em solid $search; // workaround for bug where Safari doesn't render bottom margin on legends
 			}
 		.optwrap {
 			float: left;
@@ -337,7 +337,7 @@ nav {
 		
 		fieldset {
 			float: left;
-			padding: 0 20px 20px 0;
+			padding: 0.8em 20px 20px 0;
 			}
 			#cats {
 				width: 25%;
@@ -373,6 +373,7 @@ nav {
 
 #options_compare {
     background-color: #db8000;
+    margin-top: 0;
     
     fieldset {
         max-height: 22rem;
@@ -680,6 +681,13 @@ footer {
 	
 	/* TABS */
 	.feature-tab-container {
+        a {
+            float: right;
+            position: relative;
+            top: -1.5em;
+            font-size: 0.8125rem;
+        }
+        
 		li {
 			display: inline-block;
 			padding: 10px 4px 10px 8px;
@@ -687,13 +695,6 @@ footer {
 			position: relative;
 			margin: 0 4px 0 0;
 			font-size: em(13);
-			
-            a {
-                float: right;
-                position: relative;
-                top: -1.5em;
-                font-size: 0.8125rem;
-            }
 			
 			&:after {
 				content: "";
