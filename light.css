@@ -113,7 +113,7 @@ nav .news .date { color: rgba(0, 0, 0, 0.4); }
   .searchPanel #misc, #options_compare #misc { width: 18%; padding-right: 0; } }
 
 #options_compare { background-color: #db8000; margin-top: 0; }
-#options_compare fieldset { max-height: 22rem; overflow-y: auto; }
+#options_compare fieldset { overflow-y: auto; }
 
 #top_ad { text-align: center; margin-bottom: 20px; }
 
@@ -240,7 +240,7 @@ footer .twitter-follow-button { margin: 0 20px 0 0; }
 #browser_comparison tbody .y { background: #39b54a; }
 #browser_comparison tbody .n, #browser_comparison tbody .p { background: #dd4a38; }
 #browser_comparison tbody .a { background: #b7ce03; }
-#browser_comparison thead th[class] { border-bottom: 2px solid; }
+#browser_comparison thead th[class] { border-bottom-style: solid; border-bottom-width: 2px; }
 #browser_comparison thead .ie { border-bottom-color: #2e6792; }
 #browser_comparison thead .firefox, #browser_comparison thead .and_ff { border-bottom-color: #f7931e; }
 #browser_comparison thead .chrome, #browser_comparison thead .and_chrome { border-bottom-color: #1387e8; }

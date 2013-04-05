@@ -376,7 +376,7 @@ nav {
     margin-top: 0;
     
     fieldset {
-        max-height: 22rem;
+        // max-height: 22rem; // doesn't work in firefox
         overflow-y: auto;
     }
 }
@@ -895,7 +895,10 @@ footer {
     }
     
     thead {
-        th[class] { border-bottom: 2px solid }
+        th[class] { 
+            border-bottom-style: solid;
+            border-bottom-width: 2px;
+        }
         
         .ie			{ border-bottom-color: $ie; }
         .firefox,
