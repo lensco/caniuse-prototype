@@ -50,7 +50,7 @@ h2 {
 
 fieldset {
 	float: left;
-}
+	}
 
 input {
 	font: inherit;
@@ -98,7 +98,7 @@ input {
 
 .hidden {
 	display: none;
-}
+	}
 
 
 // LAYOUT
@@ -389,7 +389,10 @@ article {
 	
 	@include tablet {
 		padding: 20px;
-		margin: 0 0 40px;
+		
+		article + & {
+			margin-top: 30px
+			}
 		}
 	}
 
@@ -469,25 +472,13 @@ footer {
 			}		
 		}
 		
-     .heading_wrap h1 {
-        width: 100%;
-    }
-
-     .heading_wrap > * {
-        display: table-cell;
-    }
-
-     a.specification {
-        padding-right: 1em;
-        width: 10%;
-    }
-		
 	h1 {
 		display: inline;
 		font-size: em(24);
 		margin: 0 20px 0 0;
 		line-height: 1.4;
 		}
+	
 	.specification {
 		color: #999;
 		white-space: nowrap;
@@ -545,6 +536,9 @@ footer {
 	@include tablet-landscape {
 		.supportStats {
 			font-size: em(21);
+			position: absolute;
+			right: 0;
+			top: 20px;
 			}
 		}
     
@@ -609,7 +603,7 @@ footer {
 					@include ie-rgba(black(.04));
 					}
 					.e0 th {
-						background: black(.12);
+						background: black(.15);
 						@include ie-rgba(black(.12));
 						}
 					th {
