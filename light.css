@@ -115,12 +115,6 @@ nav .news .date { color: rgba(0, 0, 0, 0.4); }
 #options_compare { background-color: #db8000; margin-top: 0; }
 #options_compare fieldset { overflow-y: auto; }
 
-#top_ad { text-align: center; margin-bottom: 20px; }
-
-#bottom_ad { width: 760px; margin: 0 auto 1em; height: 92px; }
-#bottom_ad .bsap { margin: 0 auto; width: 760px; }
-#bottom_ad a { float: left; margin: 0 auto; }
-
 article { background: white; padding: 16px; margin: 0 0 20px; position: relative; }
 @media (min-width: 768px) { article { padding: 20px; margin: 0 0 40px; } }
 
@@ -129,6 +123,13 @@ footer a { color: #0071bc; }
 footer .social { margin: 5px 0 0; }
 footer .twitter-follow-button { margin: 0 20px 0 0; }
 @media (min-width: 1024px) { footer { font-size: 1em; } }
+
+/* ADS */
+#top_ad { text-align: center; margin-bottom: 20px; display: none; }
+
+#bottom_ad { clear: both; width: 760px; margin: 0 auto; padding: 1em 0; height: 92px; }
+#bottom_ad .bsap { margin: 0 auto; width: 760px; }
+#bottom_ad a { float: left; margin: 0 auto; }
 
 .feature { padding-top: 36px; /* TABLE */ /* TABS */ /* TAB CONTENTS */ }
 .feature .permalink { background: #39b54a; position: absolute; left: 16px; top: 0; width: 32px; height: 32px; padding: 3px 0 0; text-align: center; color: #fff; font-size: 1.5625em; }

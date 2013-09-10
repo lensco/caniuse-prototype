@@ -202,11 +202,6 @@
 	</div>
 	
 	<footer role="contentinfo">
-		<aside id="bottom_ad">
-			<!-- bottom ad placeholder -->
-			<div style="display: inline-block; width:760px; height:90px; background:rgba(128,128,128,0.3)"></div>
-		</aside>
-	
 		<div class="credit left">
 			By <a href="http://twitter.com/Fyrd">@Fyrd</a>, design by <a href="http://twitter.com/lensco">@lensco</a>
 			|
@@ -222,6 +217,11 @@
 			<div class="g-plusone" data-size="medium" data-href="http://caniuse.com"></div>
 			<a class="FlattrButton" style="display:none;" data-flattr-button="compact" href="http://caniuse.com"></a>
 		</div>
+
+		<aside id="bottom_ad">
+			<!-- bottom ad placeholder -->
+			<div style="display: inline-block; width:760px; height:90px; background:rgba(128,128,128,0.3)"></div>
+		</aside>
 	</footer>
 	
 	<section id="index" style="display: none;" role="navigation">
