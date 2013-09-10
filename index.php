@@ -11,6 +11,14 @@
 		<script src="js/respond.min.js"></script>
 	<![endif]-->
 	<script>
+	function toggle(selector) {
+		$selector = document.querySelector(selector);
+		if($selector.style.display == 'none') {
+			$selector.style.display = 'block';
+		} else {
+			$selector.style.display = 'none';
+		}
+	}
 	function show(selector) {
 		document.querySelector(selector).style.display = 'block';
 	}
@@ -29,8 +37,8 @@
 			<span class="date">December 9, 2012 -</span> Three new features added: Strict Transport Security, CSS outline property and download attribute
 		</a>
 		<ul class="right">
-			<li><a href="#" onclick="javascript:show('#comparison_wrap'); show('#options_compare'); hide('.feature');">Compare<span> browsers</span></a></li>
-			<li><a href="#" class="index" onclick="javascript:show('#index')"><i class="icon index"></i> Index</a></li>
+			<li><a href="#" onclick="javascript:toggle('#comparison_wrap'); toggle('#options_compare'); toggle('.feature');">Compare<span> browsers</span></a></li>
+			<li><a href="#" class="index" onclick="javascript:toggle('#index')"><i class="icon index"></i> Index</a></li>
 		</ul>
 	</nav>
 	
@@ -45,7 +53,7 @@
 		Can I use
 		<input type="text" name="feat_search" autocomplete="off" autofocus value="CSS animations">
 		?
-		<a href="#" class="options" onclick="javascript:show('#options');">
+		<a href="#" class="options" onclick="javascript:toggle('#options');">
 			<i class="icon settings"></i>
 			<span>Settings</span>
 		</a>
@@ -227,7 +235,7 @@
 	<section id="index" style="display: none;" role="navigation">
 		<nav class="right">
 			<ul>
-				<li><a href="#" onclick="javascript:hide('#index');"><i class="icon close"></i> Close</a></li>
+				<li><a href="#" onclick="javascript:toggle('#index');"><i class="icon close"></i> Close</a></li>
 			</ul>
 		</nav>
 		
