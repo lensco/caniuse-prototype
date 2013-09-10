@@ -199,7 +199,7 @@ footer .twitter-follow-button { margin: 0 20px 0 0; }
 #index ol { margin: 0 0 24px; font-size: 0.8125em; }
 @media (min-width: 600px) { #index ol { font-size: 1em; } }
 #index li { list-style: square; }
-#index a { color: #fff; }
+#index a { color: #fff; display: block; }
 #index a:hover { color: #fd0; }
 
 @font-face { font-family: "caniuse"; src: url('fonts/caniuse.eot'); src: url('fonts/caniuse.eot?#iefix') format('eot'), url('fonts/caniuse.woff') format('woff'); }
