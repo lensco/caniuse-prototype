@@ -52,7 +52,8 @@ fieldset {
 	float: left;
 	}
 
-input {
+input,
+textarea {
 	font: inherit;
 	}
 	input[type=submit],
@@ -77,7 +78,12 @@ input {
 		margin: 0 3px 0 0;
 		}
 
-.cf {
+	textarea {
+		width: 100%;
+		}
+
+
+.cf { // clearfix
 	&:before,
 	&:after {
 		display: table;
@@ -196,6 +202,9 @@ nav {
 		}
 	}
 
+
+// SEARCH BAR
+
 .search {
 	background: $search;
 	color: #fff;
@@ -266,8 +275,10 @@ nav {
 		}
 	}
 
-.searchPanel,
-#options_compare {
+
+// SEARCH OPTIONS
+
+.searchPanel {
 	background: $search;
 	margin: -10px 0 10px;
 	padding: 8px 16px 24px;
@@ -282,21 +293,14 @@ nav {
 	fieldset {
 		padding: .8em 0 20px 0;
 		}
-		#cats {
-			float: left;
-			padding: 0 20px 20px 0;
-			width: 40%;
-			
-            p {
-                margin-bottom: 0;
-            }
-		}
 		legend {
 			background: white(.2);
 			@include ie-rgba(white(.2));
 			color: #fff;
 			padding: .1em .5em;
-			// border-bottom: .8em solid $search; // workaround for bug where Safari doesn't render bottom margin on legends
+			}
+		label {
+			display: block;
 			}
 		.optwrap {
 			float: left;
@@ -371,31 +375,6 @@ nav {
 		}
 	}
 
-#options_compare {
-    background-color: #db8000;
-    margin-top: 0;
-    
-    fieldset {
-        // max-height: 22rem; // doesn't work in firefox
-        overflow-y: auto;
-		}
-		}
-
-article {
-	background: $article;
-	padding: 16px;
-	margin: 0 0 20px;
-	position: relative;
-	
-	@include tablet {
-		padding: 20px;
-		
-		article + & {
-			margin-top: 30px
-			}
-		}
-	}
-
 footer {
 	line-height: 2;
 	@extend .cf;
@@ -452,7 +431,10 @@ footer {
 // ----------------------------------------------------
 
 .feature {
-	padding-top: 36px;
+	background: $article;
+	padding: 36px 16px 16px;
+	margin: 0 0 20px;
+	position: relative;
 	
 	.permalink {
 		background: $permalink;
@@ -515,7 +497,8 @@ footer {
 		}
 
 	@include tablet {
-		padding-top: 20px;
+		padding: 20px;
+		margin: 0 0 30px;
 		
 		.permalink {
 			left: -32px;
@@ -541,15 +524,7 @@ footer {
 			top: 20px;
 			}
 		}
-    
-    // Used for listed sub-features
-    dl {
-        margin: 1em 0;
 
-        dd {
-            display: inline-block;
-        }
-    }
 
 	/* TABLE */
 	.tableWrapper {
@@ -563,7 +538,6 @@ footer {
 			border-spacing: 2px;
 			border-collapse: separate;
 			font-size: em(13);
-			margin-bottom: .5em;
 			}
 			td,
 			th {
@@ -683,13 +657,6 @@ footer {
 	
 	/* TABS */
 	.feature-tab-container {
-        a {
-            float: right;
-            position: relative;
-            top: -1.5em;
-            font-size: 0.8125rem;
-        }
-        
 		li {
 			display: inline-block;
 			padding: 10px 4px 10px 8px;
@@ -744,36 +711,8 @@ footer {
 			font-size: em(16);
 			}
 		}
-		
-		textarea {
-            width: 100%;
-            height: 100px;
-            font-family: "Open Sans", sans-serif;
-            font-size: 1rem;
-		}
 	}
 
-// Links under feature blocks
-#show_links,
-#showall {
-	text-align: center;
-	margin-bottom: 40px;
-}
-
-#showall {
-	margin-bottom: 20px;
-}
-
-#show_links a,
-#showall a {
-	background-color: #db5600;
-	color: white;
-	display: inline-block;
-	padding: .5em;
-	margin: 0 3em;
-	font-size: 1.5em;
-}
-	
 
 // INDEX
 // ----------------------------------------------------
@@ -862,8 +801,20 @@ footer {
 .icon.spec:before		{ content: "\f003"; }
 .icon.close:before		{ content: "\f007"; }
 
+
+
 // BROWSER COMPARISON
 // ----------------------------------------------------
+
+#options_compare {
+	background-color: #db8000;
+	margin-top: 0;
+	
+	fieldset {
+		// max-height: 22rem; // doesn't work in firefox
+		overflow-y: auto;
+		}
+	}
 
 #comparison_wrap {
 	margin: 2em 0;
@@ -920,10 +871,6 @@ footer {
 // STYLES TO BE CLEANED UP
 // ----------------------------------------------------
 
-#options label, 
-fieldset label {
-	display: block;
-}
 
 #wciu_summary td {
 	color: #000;
@@ -946,3 +893,25 @@ section.panel {
     }
 }
 
+
+
+// Links under feature blocks
+#show_links,
+#showall {
+	text-align: center;
+	margin-bottom: 40px;
+}
+
+#showall {
+	margin-bottom: 20px;
+}
+
+#show_links a,
+#showall a {
+	background-color: #db5600;
+	color: white;
+	display: inline-block;
+	padding: .5em;
+	margin: 0 3em;
+	font-size: 1.5em;
+}
