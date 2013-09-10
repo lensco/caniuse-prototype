@@ -155,7 +155,7 @@
 			<p class="description">Complex method of animating certain properties of an element</p>
 	
 			<aside class="supportStats">
-				Support <a href="#">*</a>
+				Support
 				<span class="support" title="The CSS3 Animations feature is fully available to 59.2% of browser users worldwide.">59.2%</span> +
 				<span class="partial" title="The CSS3 Animations feature is partly available to 2.39% of browser users worldwide.">2.39%</span> =
 				<span class="total" title="The CSS3 Animations feature is available to 61.59% of browser users worldwide.">61.59%</span>
