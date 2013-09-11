@@ -122,9 +122,10 @@ footer .twitter-follow-button { margin: 0 20px 0 0; }
 /* ADS */
 #top_ad { text-align: center; margin-bottom: 20px; display: none; }
 
-#bottom_ad { clear: both; width: 760px; margin: 0 auto; padding: 1em 0; height: 92px; }
+#bottom_ad { display: none; clear: both; width: 760px; margin: 0 auto; padding: 1em 0; height: 92px; }
 #bottom_ad .bsap { margin: 0 auto; width: 760px; }
 #bottom_ad a { float: left; margin: 0 auto; }
+@media (min-width: 1024px) { #bottom_ad { display: block; } }
 
 .feature { background: #f2e8d5; padding: 36px 16px 16px; margin: 0 0 20px; position: relative; /* TABLE */ /* TABS */ /* TAB CONTENTS */ }
 .feature .permalink { background: #db5600; position: absolute; left: 16px; top: 0; width: 32px; height: 32px; padding: 3px 0 0; text-align: center; color: #fff; font-size: 1.5625em; }

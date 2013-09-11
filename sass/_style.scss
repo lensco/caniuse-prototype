@@ -407,6 +407,7 @@ footer {
 	}
 
 #bottom_ad {
+	display: none;
 	clear: both;
 	width: 760px;
 	margin: 0 auto;
@@ -421,6 +422,10 @@ footer {
 	a {
 		float: left;
 		margin: 0 auto;
+		}
+	
+	@include tablet-landscape {
+		display: block;
 		}
 	}
 
