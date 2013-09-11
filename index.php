@@ -51,7 +51,7 @@
 	
 	<section class="search" role="search">
 		Can I use
-		<input type="text" name="feat_search" autocomplete="off" autofocus value="CSS animations">
+		<input type="text" name="feat_search" autocomplete="off" autofocus value="flexbox">
 		?
 		<a href="#" class="options" onclick="javascript:toggle('#options');">
 			<i class="icon settings"></i>
@@ -152,25 +152,176 @@
 	
 	<div id="content">
 		<article class="feature" id="datauri" role="article">
-			<a class="permalink" href="#feat=datauri" title="Permanent link to the CSS3 Animation compatibility table">#</a>
+			<a class="permalink" href="#feat=datauri" title="Permanent link to the Flexible Box Layout Module compatibility table">#</a>
 
-			<h1>CSS3 Animation</h1>
-			<a class="specification wd" href="http://www.ietf.org/rfc/rfc2397.txt">
+			<h1>Flexible Box Layout Module</h1>
+			<a class="specification cr" href="http://www.w3.org/TR/css3-flexbox/">
 				<i class="icon spec"></i>
-				Working Draft
+				CR
 			</a>
 	
-			<p class="description">Complex method of animating certain properties of an element</p>
+			<p class="description">Method of positioning elements in horizontal or vertical stacks.</p>
 	
 			<aside class="supportStats">
 				Support
-				<span class="support" title="The CSS3 Animations feature is fully available to 59.2% of browser users worldwide.">59.2%</span> +
-				<span class="partial" title="The CSS3 Animations feature is partly available to 2.39% of browser users worldwide.">2.39%</span> =
-				<span class="total" title="The CSS3 Animations feature is available to 61.59% of browser users worldwide.">61.59%</span>
+				<span class="support" title="The CSS3 Animations feature is fully available to 35.4% of browser users worldwide.">35.4%</span> +
+				<span class="partial" title="The CSS3 Animations feature is partly available to 44.6% of browser users worldwide.">44.6%</span> =
+				<span class="total" title="The CSS3 Animations feature is available to 79.9% of browser users worldwide.">79.9%</span>
 			</aside>		
 			
-			<div class="tableWrapper">
-				<table class="main"><thead><tr><th class="first"><a href="#" onclick="return caniuse.allVersions(this)">Show all versions</a></th><th class="ie">IE</th><th class="firefox">Firefox</th><th class="chrome">Chrome</th><th class="safari">Safari</th><th class="opera">Opera</th><th class="ios_saf">iOS Safari</th><th class="op_mini">Opera Mini</th><th class="android">Android Browser</th><th class="bb">Blackberry Browser</th></tr></thead><tbody><tr class="e-4"><th></th><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td class="a x" data-browser="android|2.1" data-tooltip="partial (global usage: 0.12%)">2.1<span class="pre" title="Requires this prefix to work">-webkit-</span></td><td></td></tr><tr class="e-3"><th></th><td></td><td class="y x" data-browser="firefox|12" data-tooltip="yes (global usage: 1%)">12.0<span class="pre" title="Requires this prefix to work">-moz-</span></td><td></td><td></td><td></td><td class="y x" data-browser="ios_saf|3.2" data-tooltip="yes (global usage: 0.16%)">3.2<span class="pre" title="Requires this prefix to work">-webkit-</span></td><td></td><td class="a x" data-browser="android|2.2" data-tooltip="partial (global usage: 0.45%)">2.2<span class="pre" title="Requires this prefix to work">-webkit-</span></td><td></td></tr><tr class="e-2"><th></th><td class="n" data-browser="ie|7" data-tooltip="no (global usage: 1.02%)">7.0</td><td class="y x" data-browser="firefox|13" data-tooltip="yes (global usage: 1.14%)">13.0<span class="pre" title="Requires this prefix to work">-moz-</span></td><td></td><td></td><td></td><td class="y x" data-browser="ios_saf|4.0-4.1" data-tooltip="yes (global usage: 0.05%)">4.0-4.1<span class="pre" title="Requires this prefix to work">-webkit-</span></td><td></td><td class="a x" data-browser="android|2.3" data-tooltip="partial (global usage: 1.75%)">2.3<span class="pre" title="Requires this prefix to work">-webkit-</span></td><td></td></tr><tr class="e-1"><th></th><td class="n" data-browser="ie|8" data-tooltip="no (global usage: 12.04%)">8.0</td><td class="y x" data-browser="firefox|14" data-tooltip="yes (global usage: 13.41%)">14.0<span class="pre" title="Requires this prefix to work">-moz-</span></td><td class="y x" data-browser="chrome|20" data-tooltip="yes (global usage: 2.58%)">20.0<span class="pre" title="Requires this prefix to work">-webkit-</span></td><td class="y x" data-browser="safari|5.1" data-tooltip="yes (global usage: 2.18%)">5.1<span class="pre" title="Requires this prefix to work">-webkit-</span></td><td></td><td class="y x" data-browser="ios_saf|4.2-4.3" data-tooltip="yes (global usage: 0.41%)">4.2-4.3<span class="pre" title="Requires this prefix to work">-webkit-</span></td><td></td><td class="a x" data-browser="android|3" data-tooltip="partial (global usage: 0.07%)">3.0<span class="pre" title="Requires this prefix to work">-webkit-</span></td><td></td></tr><tr class="e0"><th>current</th><td class="n" data-browser="ie|9" data-tooltip="no (global usage: 15.45%)">9.0</td><td class="y x" data-browser="firefox|15" data-tooltip="yes (global usage: 0.88%)">15.0<span class="pre" title="Requires this prefix to work">-moz-</span></td><td class="y x" data-browser="chrome|21" data-tooltip="yes (global usage: 24.16%)">21.0<span class="pre" title="Requires this prefix to work">-webkit-</span></td><td class="y x" data-browser="safari|6" data-tooltip="yes (global usage: 1.02%)">6.0<span class="pre" title="Requires this prefix to work">-webkit-</span></td><td class="y x" data-browser="opera|12" data-tooltip="yes (global usage: 1.05%)">12.0<span class="pre" title="Requires this prefix to work">-o-</span></td><td class="y x" data-browser="ios_saf|5.0-5.1" data-tooltip="yes (global usage: 4.59%)">5.0-5.1<span class="pre" title="Requires this prefix to work">-webkit-</span></td><td class="n" data-browser="op_mini|5.0-7.0" data-tooltip="no (global usage: 2.18%)">5.0-7.0</td><td class="y x" data-browser="android|4" data-tooltip="yes (global usage: 0.48%)">4.0<span class="pre" title="Requires this prefix to work">-webkit-</span></td><td class="y x" data-browser="bb|7" data-tooltip="yes (global usage: 0.13%)">7.0<span class="pre" title="Requires this prefix to work">-webkit-</span></td></tr><tr class="e1"><th>near future</th><td class="y" data-browser="ie|10" data-tooltip="yes (global usage: 0.05%)">10.0</td><td class="y" data-browser="firefox|16" data-tooltip="yes (global usage: 0.04%)">16.0</td><td class="y x" data-browser="chrome|22" data-tooltip="yes (global usage: 0.13%)">22.0<span class="pre" title="Requires this prefix to work">-webkit-</span></td><td></td><td class="y" data-browser="opera|12.5" data-tooltip="yes (global usage: 0.01%)">12.5</td><td class="y x" data-browser="ios_saf|6" data-tooltip="yes (global usage: 0%)">6.0<span class="pre" title="Requires this prefix to work">-webkit-</span></td><td></td><td></td><td class="y x" data-browser="bb|10" data-tooltip="yes (global usage: 0%)">10.0<span class="pre" title="Requires this prefix to work">-webkit-</span></td></tr><tr class="e2"><th>farther future</th><td></td><td class="y" data-browser="firefox|17" data-tooltip="yes (global usage: 0%)">17.0</td><td class="y x" data-browser="chrome|23" data-tooltip="yes (global usage: 0.03%)">23.0<span class="pre" title="Requires this prefix to work">-webkit-</span></td><td></td><td></td><td></td><td></td><td></td><td></td></tr></tbody></table>
+			<div class="support_container view-mode-normal">
+				<table>
+					<thead>
+						<tr>
+							<th class="ie">IE</th>
+							<th class="firefox">Firefox</th>
+							<th class="chrome">Chrome</th>
+							<th class="safari">Safari</th>
+							<th class="opera">Opera</th>
+							<th class="ios_saf">iOS Safari</th>
+							<th class="op_mini">Opera Mini</th>
+							<th class="android">Android Browser</th>
+							<th class="bb">Blackberry Browser</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>			
+								<ol>
+									<li></li>
+									<li class="stat-cell n past">8</li>
+									<li class="stat-cell n past">9</li>
+									<li class="stat-cell a x  current">
+										10
+										<h5 class="note-header"> See notes: </h5>
+										<ul class="note-list"><span class="num-tag num-tag--2">2</span></ul>
+									</li>
+									<li class="stat-cell y future">11</li>
+								</ol>
+							</td>
+							<td>
+								<ol>
+									<li></li>
+									<li class="stat-cell a x  past">
+										21
+										<h5 class="note-header"> See notes: </h5>
+										<ul class="note-list"><span class="num-tag num-tag--1">1</span></ul>
+									</li>
+									<li class="stat-cell a  past">
+										22
+										<h5 class="note-header"> See notes: </h5>
+										<ul class="note-list"><span class="num-tag num-tag--3">3</span></ul>
+									</li>
+									<li class="stat-cell a  current">
+										23
+										<h5 class="note-header"> See notes: </h5>
+										<ul class="note-list"><span class="num-tag num-tag--3">3</span></ul>
+									</li>
+									<li class="stat-cell a  future">
+										24
+										<h5 class="note-header"> See notes: </h5>
+										<ul class="note-list"><span class="num-tag num-tag--3">3</span></ul>
+									</li>
+								</ol>
+							</td>
+							<td>
+								<ol>
+									<li></li>
+									<li class="stat-cell y x past">26</li>
+									<li class="stat-cell y x past">27</li>
+									<li class="stat-cell y x current">28</li>
+									<li class="stat-cell y future">29</li>
+								</ol>
+							</td>
+							<td>
+								<ol>
+									<li></li>
+									<li></li>
+									<li class="stat-cell a x  past">
+										5.1
+										<h5 class="note-header"> See notes: </h5>
+										<ul class="note-list"><span class="num-tag num-tag--1">1</span></ul>
+									</li>
+									<li class="stat-cell a x  current">
+										6
+										<h5 class="note-header"> See notes: </h5>
+										<ul class="note-list"><span class="num-tag num-tag--1">1</span></ul>
+									</li>
+									<li class="stat-cell y x future">7</li>
+								</ol>
+							</td>
+							<td>
+								<ol>
+									<li></li>
+									<li></li>
+									<li class="stat-cell y past">12.1</li>
+									<li class="stat-cell y x current">15</li>
+									<li class="stat-cell y x future">16</li>
+								</ol>
+							</td>
+							<td>
+								<ol>
+									<li></li>
+									<li></li>
+									<li class="stat-cell a x  past">
+										5.0-5.1
+										<h5 class="note-header"> See notes: </h5>
+										<ul class="note-list"><span class="num-tag num-tag--1">1</span></ul>
+									</li>
+									<li class="stat-cell a x  current">
+										6.0-6.1
+										<h5 class="note-header"> See notes: </h5>
+										<ul class="note-list"><span class="num-tag num-tag--1">1</span></ul>
+									</li>
+									<li class="stat-cell y x future">7.0</li>
+								</ol>
+							</td>
+							<td>
+								<ol>
+									<li></li>
+									<li></li>
+									<li></li>
+									<li class="stat-cell n current">5.0-7.0</li>
+									<li></li>
+								</ol>
+							</td>
+							<td>
+								<ol>
+									<li class="stat-cell a x  past">
+										2.3
+										<h5 class="note-header"> See notes: </h5>
+										<ul class="note-list"><span class="num-tag num-tag--1">1</span></ul>
+									</li>
+									<li class="stat-cell a x  past">
+										4
+										<h5 class="note-header"> See notes: </h5>
+										<ul class="note-list"><span class="num-tag num-tag--1">1</span></ul>
+									</li>
+									<li class="stat-cell a x  past">
+										4.1
+										<h5 class="note-header"> See notes: </h5>
+										<ul class="note-list"><span class="num-tag num-tag--1">1</span></ul>
+									</li>
+									<li class="stat-cell a x  current">
+										4.2
+										<h5 class="note-header"> See notes: </h5>
+										<ul class="note-list"><span class="num-tag num-tag--1">1</span></ul>
+									</li>
+									<li></li>
+								</ol>
+							</td>
+							<td>
+								<ol>
+									<li></li>
+									<li></li>
+									<li></li>
+									<li class="stat-cell y x current">10</li>
+									<li></li>
+								</ol>
+							</td>
+						</tr>
+					</tbody>
+				</table>
 			</div>
 	
 			<div class="feature-tab-container">

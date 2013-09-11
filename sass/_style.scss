@@ -461,8 +461,8 @@ footer {
 		
 	h1 {
 		display: inline;
-		font-size: em(24);
-		margin: 0 20px 0 0;
+		font-size: em(21);
+		margin: 0 8px 0 0;
 		line-height: 1.4;
 		}
 	
@@ -532,36 +532,32 @@ footer {
 
 
 	/* TABLE */
-	.tableWrapper {
+	.support_container {
 		max-width: 100%;
 		overflow: auto;
 		margin: 0 0 20px;
 		@include user-select();
-		}
+		-webkit-overflow-scrolling: touch;
+		
 		table {
 			width: 100%;
 			border-spacing: 2px;
 			border-collapse: separate;
-			font-size: em(13);
+			font-size: em(11);
+			text-align: center;
 			}
 			td,
 			th {
 				font-weight: 300;
 				width: 10%;
-				min-width: 4.2em;
-				padding: 4px 6px;
+				min-width: 4.5em;
 				}
-			thead {
-				th {
-					border-bottom: 4px solid #ddd;
-					border-bottom: 4px solid black(.12);
-					vertical-align: bottom;
-	
-					&:first-child {
-						min-width: 8.8em;
-						}
-					}
-	
+			th {
+				border-bottom: 4px solid #ddd;
+				border-bottom: 4px solid black(.12);
+				vertical-align: bottom;
+				padding: 6px 0;
+				}
 				.ie			{ border-bottom-color: $ie; }
 				.firefox,
 				.and_ff		{ border-bottom-color: $firefox; }
@@ -574,92 +570,103 @@ footer {
 				.op_mob		{ border-bottom-color: $opera; }
 				.android	{ border-bottom-color: $android; }
 				.bb			{ border-bottom-color: $blackberry; }
+	
+		li {
+			margin: 0 0 2px;
+			padding: 6px 0;
+			list-style: none;
+			min-height: 24px;
+			background: black(.03);
+			@include ie-rgba(black(.03));
+			color: #fff;
+			position: relative;
+			}
+			.y {
+				background: $green;
+				&:hover { background: shade(saturate($green, 25), 30); }
 				}
-			tbody {
-				th,
-				td {
-					background: black(.04);
-					@include ie-rgba(black(.04));
-					}
-					.e0 th {
-						background: black(.15);
-						@include ie-rgba(black(.12));
-						}
-					th {
-						text-align: right;
-						padding-right: 10px;
-						}
-					td {
-						background: black(.03);
-						@include ie-rgba(black(.03));
-						color: #fff;
-						position: relative;
-						}
-						.y { background: $green; }
-						.n { background: $red; }
-						.a { background: $partial; }
-		
-				tr:hover {
-					td {
-						background: black(.09);
-						@include ie-rgba(black(.09));
-						}
-						.y { background: shade(saturate($green, 25), 30); }
-						.n { background: shade(saturate($red, 15), 15); }
-						.a { background: shade(saturate($partial, 15), 20); }
-					}
+			.n {
+				background: $red;
+				&:hover { background: shade(saturate($red, 15), 20); }
 				}
-				td.y:hover:after,
-				td.n:hover:after,
-				td.a:hover:after {
-					content: attr(data-tooltip);
-					position: absolute;
-					z-index: 20;
-					top: -18px;
-					right: 10px;
-					padding: 3px 4px 4px;
-					white-space: nowrap;
-					background: #fff;
-					color: #000;
-					font-size: em(14);
-					@include box-shadow(0 0 0 2px black(.2));
-					}
-			.pre {
-				float: right;
-				background: #e6ea69;
-				color: #222;
-				font-size: 8px;
-				font-weight: 400;
-				display: inline-block;
-				padding: 2px;
-				margin: 4px 0 0 6px;
+			.a {
+				background: $partial;
+				&:hover { background: shade(saturate($partial, 15), 20); }
 				}
 			
-			@include tablet {
-				.tableWrapper {
-					margin: 0 0 30px;
-					}
-					table {
-						font-size: em(16);
-						}
-						td,
-						th {
-							padding: 8px;
-							}
+			.future {
+				opacity: .7;
 				}
-			@include desktop {
-				table {
-					font-size: em(18);
+		
+			.x {
+				&:before {
+					content: "";
+					position: absolute;
+					right: 0;
+					top: 0;
+					border-top: 12px solid #F9EC5E;
+					border-left: 12px solid transparent;
 					}
-				td,
-				th {
-					padding: 11px 8px;
+				&:after {
+					content: "";
+					position: absolute;
+					width: 3px;
+					height: 1px;
+					top: 3px;
+					right: 2px;
+					background: #222;
+					background: black(.4);
 					}
-					.pre {
-						font-size: 9px;
+				}
+			.note-header,
+			.note-list {
+				display: none;
+				}
+		
+		@include tablet-mini {
+			table {
+				font-size: em(12);
+				}			
+			th,
+			li {
+				padding: 8px 0;
+				min-height: 30px;
+				}
+			}
+		@include tablet {
+			margin: 0 0 30px;
+			
+			table {
+				font-size: em(16);
+				}
+			th,
+			li {
+				min-height: 38px;
+				padding: 11px 0;
+				}
+			.x {
+				&:before {
+					border-top-width: 15px;
+					border-left-width: 15px;
+					}
+					&:after {
+						width: 4px;
+						height: 2px;
 						}
 				}
-	
+			}
+		@include desktop {
+			table {
+				font-size: em(18);
+				}
+			th,
+			li {
+				padding: 13px 0;
+				min-height: 44px;
+				}
+			}
+		}
+			
 	/* TABS */
 	.feature-tab-container {
 		li {
