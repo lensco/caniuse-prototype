@@ -25,6 +25,13 @@
 	function hide(selector) {
 		document.querySelector(selector).style.display = 'none';
 	}
+	function activetab(el) {
+		var tabs = document.querySelectorAll('.tab');
+		for(var i=0; i<tabs.length; i++) {
+			tabs[i].classList.remove('active');
+		}		
+		el.classList.add('active');
+	}
 	</script>
 </head>
 <body>
@@ -326,32 +333,28 @@
 	
 			<div class="feature-tab-container">
 				<ul>
-					<li data-tab="notes" class="active">Notes</li>
-					<li data-tab="bugs">Known issues (0)</li>
-					<li data-tab="resources">Resources (3)</li>
-					<li data-tab="feedback">Feedback</li>
-					<li data-tab="embed">Embed</li>
+					<li data-tab="notes" class="tab active" onclick="javascript:show('.feature-notes'); hide('.feature-bugs'); hide('.feature-resources'); hide('.feature-feedback'); activetab(this);">Notes</li>
+					<li data-tab="bugs" class="tab" onclick="javascript:show('.feature-bugs'); hide('.feature-notes'); hide('.feature-resources'); hide('.feature-feedback'); activetab(this);">Known issues (1)</li>
+					<li data-tab="resources" class="tab" onclick="javascript:show('.feature-resources'); hide('.feature-bugs'); hide('.feature-notes'); hide('.feature-feedback'); activetab(this);">Resources (3)</li>
+					<li data-tab="feedback" class="tab" onclick="javascript:show('.feature-feedback'); hide('.feature-bugs'); hide('.feature-resources'); hide('.feature-notes'); activetab(this);">Feedback</li>
 				</ul>
 			</div>
 			<div class="feature-panel-container">
 				<div data-panel="notes" class="feature-notes">
-					Partial support in Android browser refers to buggy behavior in different scenarios. Support in Opera 12 is expected, but not assured.
+					<p>Most partial support refers to supporting an <a href="http://www.w3.org/TR/2009/WD-css3-flexbox-20090723/">older version</a> of the specification or an <a href="http://www.w3.org/TR/2012/WD-css3-flexbox-20120322/">older syntax</a>. For Firefox 21+ it refers to lack of flex-wrap &amp; flex-flow support.</p><p class="num-note"><span>1.</span> Only supports the <a href="\&quot;http://www.w3.org/TR/2009/WD-css3-flexbox-20090723/\&quot;">old flexbox specification</a></p><p class="num-note"><span>2.</span> Only supports the <a href="\&quot;http://www.w3.org/TR/2012/WD-css3-flexbox-20120322/\&quot;">2012 syntax</a></p><p class="num-note"><span>3.</span> Does not support flex-wrap or flex-flow properties</p>
 				</div>
 				<div data-panel="bugs" class="feature-bugs" style="display:none">
-					<span class="note">No known issues</span>
+					<ol><li class="feature-bug-item">Firefox does not support specifying widths in percentages. <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=529761">See bug</a>.</li></ol>
 				</div>
-				<div data-panel="resources" style="display:none">
-					<ul>
-						<li>
-							<a href="http://www.w3.org/TR/css3-animations/">Specification</a> [w3.org]  <span class="linktag link-reference">reference</span>
-						</li>
-						<li>
-							<a href="http://robertnyman.com/2010/05/06/css3-animations/">Blog post on usage</a> [robertnyman.com]  <span class="linktag link-info">info</span>
-						</li>
-						<li>
-							<a href="http://www.css3files.com/animation/">Information page</a> [css3files.com]  <span class="linktag link-info">info</span>
-						</li>
-					</ul>
+				<div data-panel="resources" class="feature-resources" style="display:none">
+					<ul><li class="feature-link-item"><a href="http://www.w3.org/TR/css3-flexbox/">Specification</a>[w3.org] <span class="linktag">ref</span></li><li class="feature-link-item"><a href="http://bennettfeely.com/flexplorer/">Flexbox CSS generator</a>[bennettfeely.com] <span class="linktag">demo</span></li><li class="feature-link-item"><a href="http://dev.opera.com/articles/view/advanced-cross-browser-flexbox/">Tutorial on cross-browser support</a>[dev.opera.com] <span class="linktag">info</span><span class="linktag">tutorial</span></li><li class="feature-link-item"><a href="http://www.adobe.com/devnet/html5/articles/working-with-flexbox-the-new-spec.html">Article on using the latest spec</a>[adobe.com] <span class="linktag">info</span><span class="linktag">tutorial</span></li></ul>
+				</div>
+				<div data-panel="feedback" class="feature-feedback" style="display:none">
+					<p>Send your comments, corrections, etc. Note that your comment will not be kept on the site. Please include an email address if you would like a response. Or, <a href="https://github.com/Fyrd/caniuse/blob/master/features-json/flexbox.json" target="_blank">edit this data on GitHub</a></p>
+					<form>
+						<textarea class="feature__feedback-textarea" name="comment" required="required"></textarea>
+						<p><input type="submit" value="Submit"></p>
+					</form>
 				</div>
 			</div>
 		</article>

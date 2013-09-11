@@ -5,8 +5,6 @@ html { height: 100%; overflow-y: scroll; -webkit-text-size-adjust: 100%; } // ru
 body, form, ol, ul, li, dl, dt, dd, td, th, tr, fieldset { margin: 0; padding: 0; }
 h1, h2, h3, h4, h5, h6, p, pre, blockquote, address { margin: 0 0 1em 0; padding: 0; }
 ul { list-style: none; }
-ol { margin-bottom: 1em; }
-ol > li { margin-left: 2em; }
 img, fieldset { border: 0; -ms-interpolation-mode: bicubic; }
 table { border-collapse: collapse; border-spacing: 0; empty-cells: show; font-size: 100%; }
 th { text-align: center; }
@@ -63,8 +61,9 @@ textarea {
 		border: 0;
 		padding: .3em 1em;
 		font-size: 1.2em;
-		-webkit-appearance: none;
 		border-radius: 0;
+		margin: 0;
+		-webkit-appearance: none;
 		
 		&:hover,
 		&:active,
@@ -80,6 +79,11 @@ textarea {
 
 	textarea {
 		width: 100%;
+		height: 80px;
+		max-width: 800px;
+		border: 0;
+		margin: .5em 0 0;
+		border-radius: 0; // being explicit for iOS
 		}
 
 
@@ -576,7 +580,7 @@ footer {
 				.op_mob		{ border-bottom-color: $opera; }
 				.android	{ border-bottom-color: $android; }
 				.bb			{ border-bottom-color: $blackberry; }
-	
+		
 		li {
 			margin: 0 0 2px;
 			padding: 6px 0;
@@ -586,6 +590,10 @@ footer {
 			@include ie-rgba(black(.03));
 			color: #fff;
 			position: relative;
+			
+			&:hover {
+				cursor: help;
+				}
 			}
 			.y {
 				background: $green;
@@ -601,7 +609,7 @@ footer {
 				}
 			
 			.future {
-				opacity: .7;
+				opacity: .6;
 				}
 		
 			.x {
@@ -624,10 +632,35 @@ footer {
 					background: black(.4);
 					}
 				}
-			.note-header,
-			.note-list {
-				display: none;
+			
+			.note-header {
+				position: absolute;
+				left: -9999px;
 				}
+			.note-list {
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				width: 11px;
+				
+				.num-tag {
+					display: block;
+					background: white(.4);
+					color: black(.7);
+					padding: 2px 0;
+					font-size: .6em;
+					}
+				}
+			.highlight {
+				outline: 3px solid $highlight;
+				z-index: 1;
+				
+				.num-tag {
+					background: $highlight;
+					color: #fff;
+					}
+				}
+			
 		
 		@include tablet-mini {
 			table {
@@ -660,6 +693,9 @@ footer {
 						height: 2px;
 						}
 				}
+			.note-list {
+				width: 14px;
+				}
 			}
 		@include desktop {
 			table {
@@ -676,23 +712,13 @@ footer {
 	/* TABS */
 	.feature-tab-container {
 		li {
-			display: inline-block;
-			padding: 10px 4px 10px 8px;
+			display: block;
+			padding: 10px 16px;
 			background: $tabs-light;
 			position: relative;
-			margin: 0 4px 0 0;
+			margin: 0 -16px;
 			font-size: em(13);
 			
-			&:after {
-				content: "";
-				position: absolute;
-				z-index: 2;
-				right: -14px;
-				bottom: 0;
-				border-left: 14px solid $tabs-light;
-				border-top: 34px solid transparent;
-				}
-				
 			&.active,
 			&:hover {
 				background: $tabs;
@@ -703,7 +729,22 @@ footer {
 					border-left: 14px solid $tabs;
 					}
 				}
-				
+			
+			@include mobile-landscape {
+				display: inline-block;
+				padding: 10px 4px 10px 8px;
+				margin: 0 4px 0 0;
+
+				&:after {
+					content: "";
+					position: absolute;
+					z-index: 2;
+					right: -14px;
+					bottom: 0;
+					border-left: 14px solid $tabs-light;
+					border-top: 34px solid transparent;
+					}					
+				}
 			@include tablet {
 				font-size: em(18);
 				padding: 10px 8px 10px 12px;
@@ -721,8 +762,41 @@ footer {
 		padding: 20px 16px;
 		background: $tabs;
 		font-size: em(13);
-		line-height: 1.3;
+		line-height: 1.5;
 		
+		p {
+			margin: 0 0 .3em;
+			}
+		
+		.num-note.highlight {
+			padding: 0 .3em;
+			margin-left: -.3em;
+			margin-right: -.3em;
+			background: $highlight;
+			color: #fff;
+			border-radius: 3px;
+			
+			a {
+				color: fff;
+				color: white(.7);
+				}
+			}
+		
+		ul {
+			list-style: square;
+			}
+		li {
+			margin: 0 0 .3em 2em;
+			}
+		.linktag {
+			font-size: .75em;
+			background: #fff;
+			color: $highlight;
+			border-radius: 99px;
+			padding: .1em .6em;
+			margin: 0 0 0 6px;
+			}
+				
 		@include tablet {
 			margin: 0 -20px -20px;
 			padding: 30px 20px;
