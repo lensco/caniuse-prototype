@@ -75,7 +75,7 @@ nav .news .date { color: rgba(255, 255, 255, 0.4); }
 @media (min-width: 1024px) { nav .news { display: block; } }
 
 .search { background: #db5600; color: #fff; text-align: center; padding: .6em 0; margin: 0 0 10px; font-size: 1.125em; }
-.search input { -webkit-appearance: none; -moz-appearance: none; appearance: none; border: 0; border-bottom: 1px solid #fff; background: transparent; font: inherit; color: #fff; width: 50%; padding: 0 4px; border-radius: 0; }
+.search input { -webkit-appearance: none; -moz-appearance: none; appearance: none; border: 0; border-bottom: 1px solid #fff; background: transparent; font: inherit; color: #fff; width: 50%; padding: 0 4px; border-radius: 0; text-align: center; }
 .search input:focus { outline: none; background: rgba(255, 255, 255, 0.2); }
 .search .options { color: #fff; color: rgba(255, 255, 255, 0.4); padding: 0 0 0 10px; white-space: nowrap; vertical-align: middle; }
 .search .options span { display: none; }
@@ -88,6 +88,7 @@ nav .news .date { color: rgba(255, 255, 255, 0.4); }
   .search input { border-bottom-width: 2px; }
   .search .options { font-size: 24px; } }
 @media (min-width: 1024px) { .search { font-size: 3em; } }
+@media (min-width: 1200px) { .search input { width: 30%; } }
 
 .searchPanel { background: #db5600; margin: -10px 0 10px; padding: 8px 16px 24px; font-size: 0.75em; color: #fff; overflow: hidden; line-height: 1.5; }
 .searchPanel a { color: #fff; }

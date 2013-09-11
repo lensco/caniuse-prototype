@@ -223,6 +223,7 @@ nav {
 		width: 50%;
 		padding: 0 4px;
 		border-radius: 0;
+		text-align: center;
 		
 		&:focus {
 			outline: none;
@@ -272,6 +273,11 @@ nav {
 		}
 	@include tablet-landscape {
 		font-size: em(48);
+		}
+	@include desktop {
+		input {
+			width: 30%;
+			}
 		}
 	}
 
