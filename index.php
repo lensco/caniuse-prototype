@@ -5,7 +5,7 @@
 	<title>Can I Use ... Compatibility tables for support of HTML5, CSS3, SVG and more in desktop and mobile browsers</title>
 	<link href="<?php if ($_GET['c'] == "light") { echo "light"; } else { echo "dark"; } ?>.css" rel="stylesheet">
 	<link href="http://fonts.googleapis.com/css?family=Open+Sans:300" rel="stylesheet">
-	<meta name="viewport" content="width=device-width">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<!--[if lt IE 9]>
 		<script src="js/html5shiv.js"></script>
 		<script src="js/respond.min.js"></script>
