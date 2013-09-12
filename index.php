@@ -45,7 +45,7 @@
 		</a>
 		<ul class="right">
 			<li><a href="#" onclick="javascript:toggle('#comparison_wrap'); toggle('#options_compare'); toggle('.feature');">Compare<span> browsers</span></a></li>
-			<li><a href="#" class="index" onclick="javascript:toggle('#index')"><i class="icon index"></i> Index</a></li>
+			<li><a href="#" class="index" onclick="javascript:toggle('#index')"><i class="icon icon-index"></i> Index</a></li>
 		</ul>
 	</nav>
 	
@@ -61,7 +61,7 @@
 		<input type="text" name="feat_search" autocomplete="off" autofocus value="flexbox">
 		?
 		<a href="#" class="options" onclick="javascript:toggle('#options');">
-			<i class="icon settings"></i>
+			<i class="icon icon-settings"></i>
 			<span>Settings</span>
 		</a>
 	</section>
@@ -87,7 +87,7 @@
 			<label><input type="checkbox" value="unoff"> Unofficial / Note</label>
 		</fieldset>
 		<fieldset id="agents">
-			<legend>Web Browser</legend>
+			<legend>Web Browsers</legend>
 			<p><label><input type="checkbox" onclick="caniuse.selAll(this);" value="All"> All</label></p>
 			<div class="optwrap">
 				<label><input type="checkbox" value="desktop" checked> Desktop</label>
@@ -116,7 +116,7 @@
 			<legend>Versions shown</legend>
 			<label>
 				Minimum browser usage %:<br>
-				<input id="version_threshold" type="range" step="0.1" min="0" max="10" value="0">
+				<input id="version_threshold" type="range" step="0.1" min="0" max="5" value="0.88">
 			</label>
 			<p class="dim">
 				Threshold set at <span id="usage_val">0.88</span>%<br>
@@ -132,14 +132,16 @@
 				<label><input type="checkbox" value="show_conc"> Show conclusions</label>
 			</p>
 			<label>Sort
-				<select name="sort" onchange="caniuse.MC()">
-					<option value="usr_score">Most users first</option>
-					<option value="rusr_score">Least users first</option>
-					<option value="score">Most supported first</option>
-					<option value="rscore">Least support first</option>
-					<option value="alpha">Alphabetical</option>
-					<option value="ralpha">Reverse Alphabetical</option>
-				</select>
+				<div class="select">
+					<select name="sort" onchange="caniuse.MC()">
+						<option value="usr_score">Most users first</option>
+						<option value="rusr_score">Least users first</option>
+						<option value="score">Most supported first</option>
+						<option value="rscore">Least support first</option>
+						<option value="alpha">Alphabetical</option>
+						<option value="ralpha">Reverse Alphabetical</option>
+					</select>
+				</div>
 			</label>
 		</fieldset>
 		
@@ -163,7 +165,7 @@
 
 			<h1>Flexible Box Layout Module</h1>
 			<a class="specification cr" href="http://www.w3.org/TR/css3-flexbox/">
-				<i class="icon spec"></i>
+				<i class="icon icon-spec"></i>
 				CR
 			</a>
 	
@@ -389,7 +391,7 @@
 	<section id="index" style="display: none;" role="navigation">
 		<nav class="right">
 			<ul>
-				<li><a href="#" onclick="javascript:toggle('#index');"><i class="icon close"></i> Close</a></li>
+				<li><a href="#" onclick="javascript:toggle('#index');"><i class="icon icon-close"></i> Close</a></li>
 			</ul>
 		</nav>
 		
