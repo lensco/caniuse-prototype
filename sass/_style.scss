@@ -38,7 +38,7 @@ a {
 
 h1 {
 	font-weight: 300;
-	font-size: em(36);
+	font-size: em(34);
 	}
 h2 {
 	font-weight: 300;
@@ -48,11 +48,13 @@ h2 {
 
 input,
 textarea,
-select {
+select,
+button {
 	font: inherit;
 	}
 	input[type=submit],
-	input[type=button] {
+	input[type=button],
+	button {
 		background: #fff;
 		color: $link;
 		border: 0;
@@ -354,50 +356,58 @@ nav {
 		margin: 0 0 .7em;
 		}
 	fieldset {
-		padding: .8em 0 20px 0;
+		padding: .8em 0 20px 0;		
+		}
+	legend {
+		background: white(.2);
+		@include ie-rgba(white(.2));
+		color: #fff;
+		padding: .1em .5em;
+		}
+	.dim {
+		color: white(.5);
+		}
+	
+	@include tablet {
+		margin: -20px 0 20px;
+		padding: 10px 20px 30px;
+		font-size: em(16);
+		}
+	}
+
+#options {
+	fieldset:first-child {
+		width: 50%;
+		float: left;
+		}	
+	label {
+		display: block;
+		}
+	.optwrap {
+		float: left;
+		width: 40%;
+		white-space: nowrap;
 		
-		&:first-child {
-			width: 50%;
-			float: left;
+		&:last-child {
+			width: 60%;
+			padding: 0 0 0 10px;
+			}
+		div {
+			padding: 5px 0 0 15px;
+			font-size: 11px;
+			line-height: 1.7;
 			}
 		}
-		legend {
-			background: white(.2);
-			@include ie-rgba(white(.2));
-			color: #fff;
-			padding: .1em .5em;
-			}
-		label {
-			display: block;
-			}
-		.optwrap {
+	input[type=submit],
+	input[type=button] {
+		margin: 20px 0 0;
+		}
+		.import {
+			clear: both;
 			float: left;
-			width: 40%;
-			white-space: nowrap;
-			
-			&:last-child {
-				width: 60%;
-				padding: 0 0 0 10px;
-				}
-			div {
-				padding: 5px 0 0 15px;
-				font-size: 11px;
-				line-height: 1.7;
-				}
 			}
-		input[type=submit],
-		input[type=button] {
-			margin: 20px 0 0;
-			}
-			.import {
-				clear: both;
-				float: left;
-				}
-			.save {
-				float: right;
-				}
-		.dim {
-			color: white(.5);
+		.save {
+			float: right;
 			}
 	
 	@include mobile-landscape {
@@ -408,13 +418,8 @@ nav {
 			}		
 		}
 	@include tablet {
-		margin: -20px 0 20px;
-		padding: 10px 20px 30px;
-		font-size: em(16);
-		
 		fieldset {
 			float: left;
-			padding-bottom: 20px;
 			}
 			#cats {
 				width: 25%;
@@ -458,6 +463,36 @@ nav {
 		}
 	}
 
+
+.country-message {
+	padding: 12px 16px;
+	margin: 0 0 10px;
+	background: $article;
+	text-align: center;
+	line-height: 1.2;
+	
+	button {
+		margin: 10px 10px 0;
+		}
+	
+	@include tablet {
+		padding: 10px 20px;
+		margin: 0 0 20px;
+		}
+	@include tablet-landscape {
+		text-align: left;
+		
+		br {
+			display: none
+			}
+		button {
+			margin: 0 0 0 10px;
+			}
+		}
+	}
+
+// FOOTER
+
 footer {
 	line-height: 2;
 	@extend .cf;
@@ -481,7 +516,7 @@ footer {
 	}
 
 
-/* ADS */
+// ADS
 
 #top_ad {
 	text-align: center;
@@ -612,267 +647,354 @@ footer {
 			top: 20px;
 			}
 		}
+	}
 
 
-	/* TABLE */
-	.support_container {
-		max-width: 100%;
-		overflow: auto;
-		margin: 0 0 20px;
-		@include user-select();
-		-webkit-overflow-scrolling: touch;
+/* TABLE */
+.support_container {
+	max-width: 100%;
+	overflow-x: auto;
+	margin: 0 0 20px;
+	@include user-select();
+	-webkit-overflow-scrolling: touch;
+	
+	table {
+		width: 100%;
+		border-spacing: 2px;
+		border-collapse: separate;
+		font-size: em(11);
+		text-align: center;
+		table-layout: fixed;
+		}
+		td,
+		th {
+			font-weight: 300;
+			width: 10%;
+			min-width: 4.5em;
+			}
+		thead th {
+			border-bottom: 4px solid #ddd;
+			border-bottom: 4px solid black(.12);
+			vertical-align: bottom;
+			padding: 6px 0;
+			}
+			.ie			{ border-bottom-color: $ie; }
+			.firefox,
+			.and_ff		{ border-bottom-color: $firefox; }
+			.chrome,
+			.and_chrome	{ border-bottom-color: $chrome; }
+			.safari,
+			.ios_saf	{ border-bottom-color: $safari; }
+			.opera,
+			.op_mini,
+			.op_mob		{ border-bottom-color: $opera; }
+			.android	{ border-bottom-color: $android; }
+			.bb			{ border-bottom-color: $blackberry; }
+	
+	li {
+		margin: 0 0 2px;
+		padding: 6px 0;
+		list-style: none;
+		min-height: 24px;
+		background: black(.03);
+		@include ie-rgba(black(.03));
+		color: #fff;
+		position: relative;
+		
+		&:hover {
+			cursor: help;
+			}
+		}
+		.y {
+			background: $green;
+			&:hover { background: $green-hover; }
+			}
+		.n, .p {
+			background: $red;
+			&:hover { background: $red-hover; }
+			}
+		.a {
+			background: $partial;
+			&:hover { background: $partial-hover; }
+			}
+		
+		.future {
+			opacity: .6;
+			}
+	
+		.x {
+			&:before {
+				content: "";
+				position: absolute;
+				right: 0;
+				top: 0;
+				border-top: 12px solid #F9EC5E;
+				border-left: 12px solid transparent;
+				}
+			&:after {
+				content: "";
+				position: absolute;
+				width: 3px;
+				height: 1px;
+				top: 3px;
+				right: 2px;
+				background: #222;
+				background: black(.4);
+				}
+			}
+		
+		.note-header {
+			position: absolute;
+			left: -9999px;
+			}
+		.note-list {
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			width: 11px;
+			
+			.num-tag {
+				display: block;
+				background: white(.4);
+				color: black(.7);
+				padding: 2px 0;
+				font-size: .6em;
+				}
+			}
+		.highlight {
+			outline: 3px solid $highlight;
+			z-index: 1;
+			
+			.num-tag {
+				background: $highlight;
+				color: #fff;
+				}
+			}
+		
+	
+	@include tablet-mini {
+		table {
+			font-size: em(12);
+			}			
+		th,
+		li {
+			padding: 8px 0;
+			min-height: 30px;
+			}
+		}
+	@include tablet {
+		margin: 0 0 30px;
 		
 		table {
-			width: 100%;
-			border-spacing: 2px;
-			border-collapse: separate;
-			font-size: em(11);
-			text-align: center;
+			font-size: em(16);
 			}
-			td,
-			th {
-				font-weight: 300;
-				width: 10%;
-				min-width: 4.5em;
-				}
-			th {
-				border-bottom: 4px solid #ddd;
-				border-bottom: 4px solid black(.12);
-				vertical-align: bottom;
-				padding: 6px 0;
-				}
-				.ie			{ border-bottom-color: $ie; }
-				.firefox,
-				.and_ff		{ border-bottom-color: $firefox; }
-				.chrome,
-				.and_chrome	{ border-bottom-color: $chrome; }
-				.safari,
-				.ios_saf	{ border-bottom-color: $safari; }
-				.opera,
-				.op_mini,
-				.op_mob		{ border-bottom-color: $opera; }
-				.android	{ border-bottom-color: $android; }
-				.bb			{ border-bottom-color: $blackberry; }
-		
+		th,
 		li {
-			margin: 0 0 2px;
-			padding: 6px 0;
-			list-style: none;
-			min-height: 24px;
-			background: black(.03);
-			@include ie-rgba(black(.03));
-			color: #fff;
-			position: relative;
-			
-			&:hover {
-				cursor: help;
+			min-height: 38px;
+			padding: 11px 0;
+			}
+		.x {
+			&:before {
+				border-top-width: 15px;
+				border-left-width: 15px;
+				}
+				&:after {
+					width: 4px;
+					height: 2px;
+					}
+			}
+		.note-list {
+			width: 14px;
+			}
+		}
+	@include desktop {
+		table {
+			font-size: em(18);
+			}
+		th,
+		li {
+			padding: 13px 0;
+			min-height: 44px;
+			}
+		}
+	}
+		
+/* TABS */
+.feature-tab-container {
+	li {
+		display: block;
+		padding: 10px 16px;
+		background: $tabs-light;
+		position: relative;
+		margin: 0 -16px;
+		font-size: em(13);
+		
+		&.active,
+		&:hover {
+			background: $tabs;
+			z-index: 3;
+			cursor: pointer;
+
+			&:after {
+				border-left: 14px solid $tabs;
 				}
 			}
-			.y {
-				background: $green;
-				&:hover { background: shade(saturate($green, 25), 30); }
-				}
-			.n {
-				background: $red;
-				&:hover { background: shade(saturate($red, 15), 20); }
-				}
-			.a {
-				background: $partial;
-				&:hover { background: shade(saturate($partial, 15), 20); }
-				}
-			
-			.future {
-				opacity: .6;
-				}
 		
-			.x {
-				&:before {
-					content: "";
-					position: absolute;
-					right: 0;
-					top: 0;
-					border-top: 12px solid #F9EC5E;
-					border-left: 12px solid transparent;
-					}
-				&:after {
-					content: "";
-					position: absolute;
-					width: 3px;
-					height: 1px;
-					top: 3px;
-					right: 2px;
-					background: #222;
-					background: black(.4);
-					}
-				}
-			
-			.note-header {
+		@include mobile-landscape {
+			display: inline-block;
+			padding: 10px 4px 10px 8px;
+			margin: 0 4px 0 0;
+
+			&:after {
+				content: "";
 				position: absolute;
-				left: -9999px;
-				}
-			.note-list {
-				position: absolute;
+				z-index: 2;
+				right: -14px;
 				bottom: 0;
-				left: 0;
-				width: 11px;
-				
-				.num-tag {
-					display: block;
-					background: white(.4);
-					color: black(.7);
-					padding: 2px 0;
-					font-size: .6em;
-					}
-				}
-			.highlight {
-				outline: 3px solid $highlight;
-				z-index: 1;
-				
-				.num-tag {
-					background: $highlight;
-					color: #fff;
-					}
-				}
-			
-		
-		@include tablet-mini {
-			table {
-				font-size: em(12);
-				}			
-			th,
-			li {
-				padding: 8px 0;
-				min-height: 30px;
-				}
+				border-left: 14px solid $tabs-light;
+				border-top: 34px solid transparent;
+				}					
 			}
 		@include tablet {
-			margin: 0 0 30px;
+			font-size: em(18);
+			padding: 10px 8px 10px 12px;
 			
-			table {
-				font-size: em(16);
-				}
-			th,
-			li {
-				min-height: 38px;
-				padding: 11px 0;
-				}
-			.x {
-				&:before {
-					border-top-width: 15px;
-					border-left-width: 15px;
-					}
-					&:after {
-						width: 4px;
-						height: 2px;
-						}
-				}
-			.note-list {
-				width: 14px;
-				}
-			}
-		@include desktop {
-			table {
-				font-size: em(18);
-				}
-			th,
-			li {
-				padding: 13px 0;
-				min-height: 44px;
+			&:after {
+				border-top-width: 38px;
 				}
 			}
 		}
+	}
+
+/* TAB CONTENTS */
+.feature-panel-container {
+	margin: 0 -16px -16px;
+	padding: 20px 16px;
+	background: $tabs;
+	font-size: em(13);
+	line-height: 1.5;
+	
+	p {
+		margin: 0 0 .3em;
+		}
+	
+	.num-note.highlight {
+		padding: 0 .3em;
+		margin-left: -.3em;
+		margin-right: -.3em;
+		background: $highlight;
+		color: #fff;
+		border-radius: 3px;
+		
+		a {
+			color: fff;
+			color: white(.7);
+			}
+		}
+	
+	ul {
+		list-style: square;
+		}
+	li {
+		margin: 0 0 .3em 2em;
+		}
+	.linktag {
+		font-size: .75em;
+		background: #fff;
+		color: $highlight;
+		border-radius: 99px;
+		padding: .1em .6em;
+		margin: 0 0 0 6px;
+		}
 			
-	/* TABS */
-	.feature-tab-container {
-		li {
-			display: block;
-			padding: 10px 16px;
-			background: $tabs-light;
-			position: relative;
-			margin: 0 -16px;
-			font-size: em(13);
+	@include tablet {
+		margin: 0 -20px -20px;
+		padding: 30px 20px;
+		font-size: em(16);
+		}
+	}
+
+
+// PAGES
+// ----------------------------------------------------
+
+.page {
+	position: fixed;
+	z-index: 10;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	padding: 0 5% 40px;
+	background: $nav-hover;
+	color: #fff;
+	overflow: auto;
+	-webkit-overflow-scrolling: touch;
+	
+	nav {
+		a {
+			background: #fff;
+			color: $nav-hover;
+			margin: 0;
 			
-			&.active,
 			&:hover {
-				background: $tabs;
-				z-index: 3;
-				cursor: pointer;
-
-				&:after {
-					border-left: 14px solid $tabs;
-					}
-				}
-			
-			@include mobile-landscape {
-				display: inline-block;
-				padding: 10px 4px 10px 8px;
-				margin: 0 4px 0 0;
-
-				&:after {
-					content: "";
-					position: absolute;
-					z-index: 2;
-					right: -14px;
-					bottom: 0;
-					border-left: 14px solid $tabs-light;
-					border-top: 34px solid transparent;
-					}					
-				}
-			@include tablet {
-				font-size: em(18);
-				padding: 10px 8px 10px 12px;
-				
-				&:after {
-					border-top-width: 38px;
-					}
+				color: #fff;
+				background: none;
 				}
 			}
 		}
 	
-	/* TAB CONTENTS */
-	.feature-panel-container {
-		margin: 0 -16px -16px;
-		padding: 20px 16px;
-		background: $tabs;
+	.content {
+		max-width: 700px;
+		margin: 40px auto 0;
+		line-height: 1.4;
 		font-size: em(13);
-		line-height: 1.5;
-		
-		p {
-			margin: 0 0 .3em;
-			}
-		
-		.num-note.highlight {
-			padding: 0 .3em;
-			margin-left: -.3em;
-			margin-right: -.3em;
-			background: $highlight;
+
+		a {
 			color: #fff;
-			border-radius: 3px;
+			border-bottom: 1px solid white(.4);
 			
-			a {
-				color: fff;
-				color: white(.7);
+			&:hover {
+				border: 0;
 				}
 			}
-		
-		ul {
-			list-style: square;
+		ul,
+		ol {
+			margin: 1em 0;
 			}
 		li {
-			margin: 0 0 .3em 2em;
+			list-style: square;
+			margin: 0 0 0 2em;
 			}
-		.linktag {
-			font-size: .75em;
-			background: #fff;
-			color: $highlight;
-			border-radius: 99px;
-			padding: .1em .6em;
-			margin: 0 0 0 6px;
+		ol li {
+			list-style: decimal;
 			}
-				
-		@include tablet {
-			margin: 0 -20px -20px;
-			padding: 30px 20px;
+		}
+	
+	article {
+		margin: 0 0 4em;
+		
+		.date {
+			color: white(.5);
+			}
+		h3 {
+			font-weight: 300;
+			font-size: 1.5em;
+			margin: .2em 0 .5em;
+			line-height: 1.2;
+			border-left: 3px solid #fff;
+			padding-left: 13px;
+			margin-left: -16px;
+			}
+		}
+	
+	@include tablet-mini {
+		.content {
+			font-size: em(14);
+			}
+		}
+	@include tablet {
+		.content {
 			font-size: em(16);
 			}
 		}
@@ -880,32 +1002,18 @@ footer {
 
 
 // INDEX
-// ----------------------------------------------------
 
 #index {
-	position: absolute;
-	z-index: 10;
-	top: 0;
-	left: 0;
-	width: 100%;
-	padding: 70px 5% 40px;
 	background: $index;
-	color: #fff;
 	
-	nav {
-		margin: -70px 0 0;
-		
-		a {
-			background: #fff;
-			color: $index;
-			margin: 0;
-			
-			&:hover {
-				color: #000;
-				}
-			}
+	nav a {
+		color: $index;
 		}
-		
+	
+	h1 {
+		margin-top: 70px;
+		}
+
 	> div {
 		float: left;
 		min-width: 290px;
@@ -925,7 +1033,7 @@ footer {
 			width: 20%;
 			}
 		}
-		ol {
+		ul {
 			margin: 0 0 24px;
 			font-size: em(13);
 			
@@ -933,19 +1041,113 @@ footer {
 				font-size: em(16);
 				}
 			}
-		li {
-			list-style: square;
-			}
-			a {
-				color: #fff;
-				display: block;
-				
-				&:hover {
-					color: #fd0;
-					}
+			li {
+				list-style: square;
+				margin: 0 0 0 2em;				
 				}
+		a {
+			color: #fff;
+			display: block;
+			
+			&:hover {
+				color: #fd0;
+				}
+			}
 	}
 
+
+
+// BROWSER COMPARISON
+// ----------------------------------------------------
+
+#compare-options {
+	margin-top: 0;
+	
+	fieldset {
+		width: auto;
+		margin: 0 30px 0 0;
+		padding-bottom: 10px;
+		}
+	label {
+		white-space: nowrap;
+		margin-right: 5px;
+		}
+	> div {
+		padding: 20px 0 0 16px;
+		margin: 0 -16px;
+		overflow: hidden;
+		background: white(.1);
+		}		
+	
+	@include mobile-landscape {
+		button {
+			float: right;
+			}		
+		}
+	@include tablet-mini {
+		> fieldset {
+			float: left;
+			
+			label {
+				display: block;
+				}
+			}
+		> div {
+			padding: 20px;
+			margin: 0 0 0 140px;
+			}		
+		}
+	@include tablet-landscape {
+		fieldset {
+			float: left;
+			}
+		label {
+			display: block;
+			}
+		}
+	}
+
+#compare-content {
+	background: $article;
+	padding: 16px;
+	margin: 0 0 20px;
+	
+	h2 {
+		margin-top: .5em;
+		text-align: left;
+		color: #000;
+		}
+	
+	td {
+		position: relative;
+		color: #fff;
+		}
+	tbody {
+		th {
+			padding-right: 8px;
+			width: 30%;
+			}
+		tr:hover {
+			th {
+				background: black(.05);
+				}
+			.y {
+				background: $green-hover;
+				}
+			.n, .p {
+				background: $red-hover;
+				}
+			.a {
+				background: $partial-hover;
+				}			
+			}
+		}
+
+	@include tablet {
+		padding: 20px;
+		margin: 0 0 30px;
+		}
+	}
 
 
 // ICONS
@@ -996,70 +1198,9 @@ input[type=checkbox]:checked:before {
 }
 
 
-// BROWSER COMPARISON
-// ----------------------------------------------------
 
-#options_compare {
-	background-color: #db8000;
-	margin-top: 0;
-	
-	fieldset {
-		// max-height: 22rem; // doesn't work in firefox
-		overflow-y: auto;
-		}
-	}
 
-#comparison_wrap {
-	margin: 2em 0;
-	background-color: #ede1cc;
-	padding: 2em;
-}
 
-#browser_comparison {
-	width: 100%;
-	border-spacing: 2px;
-	border-collapse: separate;
-	
-	th {
-        background-color: rgba(0, 0, 0, 0.03);
-        padding: 8px;
-    }
-    
-    td { 
-        padding: 8px;
-    }
-    
-    tr:hover th {
-        background-color: rgba(0, 0, 0, 0.09);
-    }
-    
-    tbody {
-        .y { background: $green; }
-        .n,
-        .p { background: $red; }
-        .a { background: $partial; }
-    }
-    
-    thead {
-        th[class] { 
-            border-bottom-style: solid;
-            border-bottom-width: 2px;
-        }
-        
-        .ie			{ border-bottom-color: $ie; }
-        .firefox,
-        .and_ff		{ border-bottom-color: $firefox; }
-        .chrome,
-        .and_chrome	{ border-bottom-color: $chrome; }
-        .safari,
-        .ios_saf	{ border-bottom-color: $safari; }
-        .opera,
-        .op_mini,
-        .op_mob		{ border-bottom-color: $opera; }
-        .android	{ border-bottom-color: $android; }
-        .bb			{ border-bottom-color: $blackberry; }    
-    }
-}
 
 // STYLES TO BE CLEANED UP
 // ----------------------------------------------------

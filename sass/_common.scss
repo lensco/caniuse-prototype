@@ -5,6 +5,10 @@ $red: #dd4a38;
 $partial: #b7ce03;
 $blue: #0071bc;
 
+$green-hover: shade(saturate($green, 25), 30);
+$red-hover: shade(saturate($red, 15), 20);
+$partial-hover: shade(saturate($partial, 15), 20);
+
 $ie: #2e6792;
 $firefox: #f7931e;
 $chrome: #1387e8;

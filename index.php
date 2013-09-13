@@ -4,47 +4,24 @@
 	<meta charset="utf-8">
 	<title>Can I Use ... Compatibility tables for support of HTML5, CSS3, SVG and more in desktop and mobile browsers</title>
 	<link href="<?php if ($_GET['c'] == "light") { echo "light"; } else { echo "dark"; } ?>.css" rel="stylesheet">
-	<link href="http://fonts.googleapis.com/css?family=Open+Sans:300" rel="stylesheet">
+	<link href="http://fonts.googleapis.com/css?family=Open+Sans:300,700" rel="stylesheet">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<!--[if lt IE 9]>
 		<script src="js/html5shiv.js"></script>
 		<script src="js/respond.min.js"></script>
 	<![endif]-->
-	<script>
-	function toggle(selector) {
-		$selector = document.querySelector(selector);
-		if($selector.style.display == 'none') {
-			$selector.style.display = 'block';
-		} else {
-			$selector.style.display = 'none';
-		}
-	}
-	function show(selector) {
-		document.querySelector(selector).style.display = 'block';
-	}
-	function hide(selector) {
-		document.querySelector(selector).style.display = 'none';
-	}
-	function activetab(el) {
-		var tabs = document.querySelectorAll('.tab');
-		for(var i=0; i<tabs.length; i++) {
-			tabs[i].classList.remove('active');
-		}		
-		el.classList.add('active');
-	}
-	</script>
 </head>
 <body>
 	<nav role="navigation">
 		<ul class="left">
-			<li><a href="#">About</a></li>
-			<li><a href="#">News</a></li>
+			<li><a href="#" onclick="javascript:toggle('#about')">About</a></li>
+			<li><a href="#" onclick="javascript:toggle('#news')">News</a></li>
 		</ul>
-		<a class="news" href="#">
-			<span class="date">December 9, 2012 -</span> Three new features added: Strict Transport Security, CSS outline property and download attribute
+		<a class="news" href="#" onclick="javascript:toggle('#news')">
+			<span class="date">Sep 03, 2013 -</span> New browser added: IE Mobile 10
 		</a>
 		<ul class="right">
-			<li><a href="#" onclick="javascript:toggle('#comparison_wrap'); toggle('#options_compare'); toggle('.feature');">Compare<span> browsers</span></a></li>
+			<li><a href="#" onclick="javascript:toggle('#compare-content'); toggle('#compare-options'); toggle('.feature');">Compare<span> browsers</span></a></li>
 			<li><a href="#" class="index" onclick="javascript:toggle('#index')"><i class="icon icon-index"></i> Index</a></li>
 		</ul>
 	</nav>
@@ -155,8 +132,158 @@
 		<input type="submit" value="Load" onclick="javascript:hide('#import');">
 	</section>
 	
-	<div id="options_compare" style="display:none">
-		<p class="browser_compare_note">Select browsers to compare</p><fieldset id="cats"><legend>Category</legend><label><input type="checkbox" checked="" value="All" onclick="caniuse.selAll(this);">All</label><p><input type="checkbox" checked="" value="PNG" onclick="caniuse.MC()"><a href="#" onclick="return caniuse.MC('PNG')">PNG</a></p><p><input type="checkbox" checked="" value="Other" onclick="caniuse.MC()"><a href="#" onclick="return caniuse.MC('Other')">Other</a></p><p><input type="checkbox" checked="" value="HTML5" onclick="caniuse.MC()"><a href="#" onclick="return caniuse.MC('HTML5')">HTML5</a></p><p><input type="checkbox" checked="" value="DOM" onclick="caniuse.MC()"><a href="#" onclick="return caniuse.MC('DOM')">DOM</a></p><p><input type="checkbox" checked="" value="JS API" onclick="caniuse.MC()"><a href="#" onclick="return caniuse.MC('JS API')">JS API</a></p><p><input type="checkbox" checked="" value="CSS3" onclick="caniuse.MC()"><a href="#" onclick="return caniuse.MC('CSS3')">CSS3</a></p><p><input type="checkbox" checked="" value="CSS" onclick="caniuse.MC()"><a href="#" onclick="return caniuse.MC('CSS')">CSS</a></p><p><input type="checkbox" checked="" value="CSS2" onclick="caniuse.MC()"><a href="#" onclick="return caniuse.MC('CSS2')">CSS2</a></p><p><input type="checkbox" checked="" value="SVG" onclick="caniuse.MC()"><a href="#" onclick="return caniuse.MC('SVG')">SVG</a></p><p><input type="checkbox" checked="" value="Canvas" onclick="caniuse.MC()"><a href="#" onclick="return caniuse.MC('Canvas')">Canvas</a></p><p><input type="checkbox" checked="" value="Summary" onclick="caniuse.MC()"><a href="#" onclick="return caniuse.MC('Summary')">Summary</a></p></fieldset><fieldset id="statuses"><legend>Status</legend><label><input type="checkbox" value="All" onclick="caniuse.selAll(this);">All</label><label><input type="checkbox" checked="" value="rec" onclick="caniuse.MC()">Recommendation</label><label><input type="checkbox" checked="" value="pr" onclick="caniuse.MC()">Proposed Rec.</label><label><input type="checkbox" checked="" value="cr" onclick="caniuse.MC()">Candidate Rec.</label><label><input type="checkbox" checked="" value="wd" onclick="caniuse.MC()">Working Draft</label><label><input type="checkbox" checked="" value="other" onclick="caniuse.MC()">Other</label><label><input type="checkbox" value="unoff" onclick="caniuse.MC()">Unofficial / Note</label></fieldset><form id="comp_opts"><fieldset class="browser_opts"><legend>IE</legend><label><input type="checkbox" value="ie+5.5" onchange="caniuse.MC(0, this)">5.5</label><label><input type="checkbox" value="ie+6" onchange="caniuse.MC(0, this)">6.0</label><label><input type="checkbox" value="ie+7" onchange="caniuse.MC(0, this)">7.0</label><label><input type="checkbox" value="ie+8" onchange="caniuse.MC(0, this)">8.0</label><label><input type="checkbox" value="ie+9" onchange="caniuse.MC(0, this)">9.0</label><label><input type="checkbox" value="ie+10" onchange="caniuse.MC(0, this)">10.0</label></fieldset><fieldset class="browser_opts"><legend>Firefox</legend><label><input type="checkbox" value="firefox+2" onchange="caniuse.MC(0, this)">2.0</label><label><input type="checkbox" value="firefox+3" onchange="caniuse.MC(0, this)">3.0</label><label><input type="checkbox" value="firefox+3.5" onchange="caniuse.MC(0, this)">3.5</label><label><input type="checkbox" value="firefox+3.6" onchange="caniuse.MC(0, this)">3.6</label><label><input type="checkbox" value="firefox+4" onchange="caniuse.MC(0, this)">4.0</label><label><input type="checkbox" value="firefox+5" onchange="caniuse.MC(0, this)">5.0</label><label><input type="checkbox" value="firefox+6" onchange="caniuse.MC(0, this)">6.0</label><label><input type="checkbox" value="firefox+7" onchange="caniuse.MC(0, this)">7.0</label><label><input type="checkbox" value="firefox+8" onchange="caniuse.MC(0, this)">8.0</label><label><input type="checkbox" value="firefox+9" onchange="caniuse.MC(0, this)">9.0</label><label><input type="checkbox" value="firefox+10" onchange="caniuse.MC(0, this)">10.0</label><label><input type="checkbox" value="firefox+11" onchange="caniuse.MC(0, this)">11.0</label><label><input type="checkbox" value="firefox+12" onchange="caniuse.MC(0, this)">12.0</label><label><input type="checkbox" value="firefox+13" onchange="caniuse.MC(0, this)">13.0</label><label><input type="checkbox" value="firefox+14" onchange="caniuse.MC(0, this)">14.0</label><label><input type="checkbox" value="firefox+15" onchange="caniuse.MC(0, this)">15.0</label><label><input type="checkbox" value="firefox+16" onchange="caniuse.MC(0, this)">16.0</label><label><input type="checkbox" value="firefox+17" onchange="caniuse.MC(0, this)">17.0</label><label><input type="checkbox" value="firefox+18" onchange="caniuse.MC(0, this)">18.0</label><label><input type="checkbox" checked="" value="firefox+19" onchange="caniuse.MC(0, this)">19.0</label><label><input type="checkbox" value="firefox+20" onchange="caniuse.MC(0, this)">20.0</label><label><input type="checkbox" value="firefox+21" onchange="caniuse.MC(0, this)">21.0</label></fieldset><fieldset class="browser_opts"><legend>Chrome</legend><label><input type="checkbox" value="chrome+4" onchange="caniuse.MC(0, this)">4.0</label><label><input type="checkbox" value="chrome+5" onchange="caniuse.MC(0, this)">5.0</label><label><input type="checkbox" value="chrome+6" onchange="caniuse.MC(0, this)">6.0</label><label><input type="checkbox" value="chrome+7" onchange="caniuse.MC(0, this)">7.0</label><label><input type="checkbox" value="chrome+8" onchange="caniuse.MC(0, this)">8.0</label><label><input type="checkbox" value="chrome+9" onchange="caniuse.MC(0, this)">9.0</label><label><input type="checkbox" value="chrome+10" onchange="caniuse.MC(0, this)">10.0</label><label><input type="checkbox" value="chrome+11" onchange="caniuse.MC(0, this)">11.0</label><label><input type="checkbox" value="chrome+12" onchange="caniuse.MC(0, this)">12.0</label><label><input type="checkbox" value="chrome+13" onchange="caniuse.MC(0, this)">13.0</label><label><input type="checkbox" value="chrome+14" onchange="caniuse.MC(0, this)">14.0</label><label><input type="checkbox" value="chrome+15" onchange="caniuse.MC(0, this)">15.0</label><label><input type="checkbox" value="chrome+16" onchange="caniuse.MC(0, this)">16.0</label><label><input type="checkbox" value="chrome+17" onchange="caniuse.MC(0, this)">17.0</label><label><input type="checkbox" value="chrome+18" onchange="caniuse.MC(0, this)">18.0</label><label><input type="checkbox" value="chrome+19" onchange="caniuse.MC(0, this)">19.0</label><label><input type="checkbox" value="chrome+20" onchange="caniuse.MC(0, this)">20.0</label><label><input type="checkbox" value="chrome+21" onchange="caniuse.MC(0, this)">21.0</label><label><input type="checkbox" value="chrome+22" onchange="caniuse.MC(0, this)">22.0</label><label><input type="checkbox" value="chrome+23" onchange="caniuse.MC(0, this)">23.0</label><label><input type="checkbox" value="chrome+24" onchange="caniuse.MC(0, this)">24.0</label><label><input type="checkbox" checked="" value="chrome+25" onchange="caniuse.MC(0, this)">25.0</label><label><input type="checkbox" value="chrome+26" onchange="caniuse.MC(0, this)">26.0</label><label><input type="checkbox" value="chrome+27" onchange="caniuse.MC(0, this)">27.0</label></fieldset><fieldset class="browser_opts"><legend>Safari</legend><label><input type="checkbox" value="safari+3.1" onchange="caniuse.MC(0, this)">3.1</label><label><input type="checkbox" value="safari+3.2" onchange="caniuse.MC(0, this)">3.2</label><label><input type="checkbox" value="safari+4" onchange="caniuse.MC(0, this)">4.0</label><label><input type="checkbox" value="safari+5" onchange="caniuse.MC(0, this)">5.0</label><label><input type="checkbox" value="safari+5.1" onchange="caniuse.MC(0, this)">5.1</label><label><input type="checkbox" value="safari+6" onchange="caniuse.MC(0, this)">6.0</label></fieldset><fieldset class="browser_opts"><legend>Opera</legend><label><input type="checkbox" value="opera+9.5-9.6" onchange="caniuse.MC(0, this)">9.5-9.6</label><label><input type="checkbox" value="opera+10.0-10.1" onchange="caniuse.MC(0, this)">10.0-10.1</label><label><input type="checkbox" value="opera+10.5" onchange="caniuse.MC(0, this)">10.5</label><label><input type="checkbox" value="opera+10.6" onchange="caniuse.MC(0, this)">10.6</label><label><input type="checkbox" value="opera+11" onchange="caniuse.MC(0, this)">11.0</label><label><input type="checkbox" value="opera+11.1" onchange="caniuse.MC(0, this)">11.1</label><label><input type="checkbox" value="opera+11.5" onchange="caniuse.MC(0, this)">11.5</label><label><input type="checkbox" value="opera+11.6" onchange="caniuse.MC(0, this)">11.6</label><label><input type="checkbox" value="opera+12" onchange="caniuse.MC(0, this)">12.0</label><label><input type="checkbox" value="opera+12.1" onchange="caniuse.MC(0, this)">12.1</label><label><input type="checkbox" value="opera+12.5" onchange="caniuse.MC(0, this)">12.5</label></fieldset><fieldset class="browser_opts"><legend>iOS Safari</legend><label><input type="checkbox" value="ios_saf+3.2" onchange="caniuse.MC(0, this)">3.2</label><label><input type="checkbox" value="ios_saf+4.0-4.1" onchange="caniuse.MC(0, this)">4.0-4.1</label><label><input type="checkbox" value="ios_saf+4.2-4.3" onchange="caniuse.MC(0, this)">4.2-4.3</label><label><input type="checkbox" value="ios_saf+5.0-5.1" onchange="caniuse.MC(0, this)">5.0-5.1</label><label><input type="checkbox" value="ios_saf+6" onchange="caniuse.MC(0, this)">6.0</label></fieldset><fieldset class="browser_opts"><legend>Opera Mini</legend><label><input type="checkbox" value="op_mini+5.0-7.0" onchange="caniuse.MC(0, this)">5.0-7.0</label></fieldset><fieldset class="browser_opts"><legend>Android Browser</legend><label><input type="checkbox" value="android+2.1" onchange="caniuse.MC(0, this)">2.1</label><label><input type="checkbox" value="android+2.2" onchange="caniuse.MC(0, this)">2.2</label><label><input type="checkbox" value="android+2.3" onchange="caniuse.MC(0, this)">2.3</label><label><input type="checkbox" value="android+3" onchange="caniuse.MC(0, this)">3.0</label><label><input type="checkbox" value="android+4" onchange="caniuse.MC(0, this)">4.0</label><label><input type="checkbox" value="android+4.1" onchange="caniuse.MC(0, this)">4.1</label><label><input type="checkbox" value="android+4.2" onchange="caniuse.MC(0, this)">4.2</label></fieldset><fieldset class="browser_opts"><legend>Blackberry Browser</legend><label><input type="checkbox" value="bb+7" onchange="caniuse.MC(0, this)">7.0</label><label><input type="checkbox" value="bb+10" onchange="caniuse.MC(0, this)">10.0</label></fieldset><fieldset class="browser_opts"><legend>Opera Mobile</legend><label><input type="checkbox" value="op_mob+10" onchange="caniuse.MC(0, this)">10.0</label><label><input type="checkbox" value="op_mob+11.5" onchange="caniuse.MC(0, this)">11.5</label><label><input type="checkbox" value="op_mob+12" onchange="caniuse.MC(0, this)">12.0</label><label><input type="checkbox" value="op_mob+12.1" onchange="caniuse.MC(0, this)">12.1</label></fieldset><fieldset class="browser_opts"><legend>Chrome for Android</legend><label><input type="checkbox" value="and_chr+0" onchange="caniuse.MC(0, this)">18.0</label></fieldset><fieldset class="browser_opts"><legend>Firefox for Android</legend><label><input type="checkbox" value="and_ff+0" onchange="caniuse.MC(0, this)">14.0</label></fieldset></form>
+	<aside class="country-message">Detected your country as Belgium. Would you like to import usage data for that country?<br><button class="ciu-button  region-detected-button">Import</button> <button class="ciu-button  region-detected-button">No thanks</button></aside>
+	
+	<div id="compare-options" class="searchPanel" style="display:none">
+		<button id="browser_compare_reset">Reset selection</button>
+		<h2>Select browsers to compare</h2>
+		<fieldset>
+			<legend>Categories</legend>
+			<label><input type="checkbox" value="all" data-select-subjects="compare_cats" checked> All</label>
+			<label><input type="checkbox" value="CSS" data-select-id="compare_cats" checked> <a href="#compare_cats=CSS">CSS</a></label>
+			<label><input type="checkbox" value="HTML5" data-select-id="compare_cats" checked> <a href="#compare_cats=HTML5">HTML5</a></label>
+			<label><input type="checkbox" value="JS API" data-select-id="compare_cats" checked> <a href="#compare_cats=JS API">JS API</a></label>
+			<label><input type="checkbox" value="Other" data-select-id="compare_cats" checked> <a href="#compare_cats=Other">Other</a></label>
+			<label><input type="checkbox" value="SVG" data-select-id="compare_cats" checked> <a href="#compare_cats=SVG">SVG</a></label>
+		</fieldset>
+		<div>
+			<fieldset>
+				<legend>IE</legend>
+				<label><input type="checkbox" value="ie+5.5" data-select-id="compare">5.5</label>
+				<label><input type="checkbox" value="ie+6" data-select-id="compare">6</label>
+				<label><input type="checkbox" value="ie+7" data-select-id="compare">7</label>
+				<label><input type="checkbox" value="ie+8" data-select-id="compare">8</label>
+				<label><input type="checkbox" value="ie+9" data-select-id="compare">9</label>
+				<label><input type="checkbox" value="ie+10" data-select-id="compare">10</label>
+				<label><input type="checkbox" value="ie+11" data-select-id="compare">11</label>
+			</fieldset>
+			<fieldset>
+				<legend>Firefox</legend>
+				<label><input type="checkbox" value="firefox+2" data-select-id="compare">2</label>
+				<label><input type="checkbox" value="firefox+3" data-select-id="compare">3</label>
+				<label><input type="checkbox" value="firefox+3.5" data-select-id="compare">3.5</label>
+				<label><input type="checkbox" value="firefox+3.6" data-select-id="compare">3.6</label>
+				<label><input type="checkbox" value="firefox+4" data-select-id="compare">4</label>
+				<label><input type="checkbox" value="firefox+5" data-select-id="compare">5</label>
+				<label><input type="checkbox" value="firefox+6" data-select-id="compare">6</label>
+				<label><input type="checkbox" value="firefox+7" data-select-id="compare">7</label>
+				<label><input type="checkbox" value="firefox+8" data-select-id="compare">8</label>
+				<label><input type="checkbox" value="firefox+9" data-select-id="compare">9</label>
+				<label><input type="checkbox" value="firefox+10" data-select-id="compare">10</label>
+				<label><input type="checkbox" value="firefox+11" data-select-id="compare">11</label>
+				<label><input type="checkbox" value="firefox+12" data-select-id="compare">12</label>
+				<label><input type="checkbox" value="firefox+13" data-select-id="compare">13</label>
+				<label><input type="checkbox" value="firefox+14" data-select-id="compare">14</label>
+				<label><input type="checkbox" value="firefox+15" data-select-id="compare">15</label>
+				<label><input type="checkbox" value="firefox+16" data-select-id="compare">16</label>
+				<label><input type="checkbox" value="firefox+17" data-select-id="compare">17</label>
+				<label><input type="checkbox" value="firefox+18" data-select-id="compare">18</label>
+				<label><input type="checkbox" value="firefox+19" data-select-id="compare">19</label>
+				<label><input type="checkbox" value="firefox+20" data-select-id="compare">20</label>
+				<label><input type="checkbox" value="firefox+21" data-select-id="compare">21</label>
+				<label><input type="checkbox" value="firefox+22" data-select-id="compare">22</label>
+				<label><input type="checkbox" value="firefox+23" data-select-id="compare">23</label>
+				<label><input type="checkbox" value="firefox+24" data-select-id="compare">24</label>
+			</fieldset>
+			<fieldset>
+				<legend>Chrome</legend>
+				<label><input type="checkbox" value="chrome+4" data-select-id="compare">4</label>
+				<label><input type="checkbox" value="chrome+5" data-select-id="compare">5</label>
+				<label><input type="checkbox" value="chrome+6" data-select-id="compare">6</label>
+				<label><input type="checkbox" value="chrome+7" data-select-id="compare">7</label>
+				<label><input type="checkbox" value="chrome+8" data-select-id="compare">8</label>
+				<label><input type="checkbox" value="chrome+9" data-select-id="compare">9</label>
+				<label><input type="checkbox" value="chrome+10" data-select-id="compare">10</label>
+				<label><input type="checkbox" value="chrome+11" data-select-id="compare">11</label>
+				<label><input type="checkbox" value="chrome+12" data-select-id="compare">12</label>
+				<label><input type="checkbox" value="chrome+13" data-select-id="compare">13</label>
+				<label><input type="checkbox" value="chrome+14" data-select-id="compare">14</label>
+				<label><input type="checkbox" value="chrome+15" data-select-id="compare">15</label>
+				<label><input type="checkbox" value="chrome+16" data-select-id="compare">16</label>
+				<label><input type="checkbox" value="chrome+17" data-select-id="compare">17</label>
+				<label><input type="checkbox" value="chrome+18" data-select-id="compare">18</label>
+				<label><input type="checkbox" value="chrome+19" data-select-id="compare">19</label>
+				<label><input type="checkbox" value="chrome+20" data-select-id="compare">20</label>
+				<label><input type="checkbox" value="chrome+21" data-select-id="compare">21</label>
+				<label><input type="checkbox" value="chrome+22" data-select-id="compare">22</label>
+				<label><input type="checkbox" value="chrome+23" data-select-id="compare">23</label>
+				<label><input type="checkbox" value="chrome+24" data-select-id="compare">24</label>
+				<label><input type="checkbox" value="chrome+25" data-select-id="compare">25</label>
+				<label><input type="checkbox" value="chrome+26" data-select-id="compare">26</label>
+				<label><input type="checkbox" value="chrome+27" data-select-id="compare">27</label>
+				<label><input type="checkbox" value="chrome+28" data-select-id="compare">28</label>
+				<label><input type="checkbox" value="chrome+29" data-select-id="compare">29</label>
+			</fieldset>
+			<fieldset>
+				<legend>Safari</legend>
+				<label><input type="checkbox" value="safari+3.1" data-select-id="compare">3.1</label>
+				<label><input type="checkbox" value="safari+3.2" data-select-id="compare">3.2</label>
+				<label><input type="checkbox" value="safari+4" data-select-id="compare">4</label>
+				<label><input type="checkbox" value="safari+5" data-select-id="compare">5</label>
+				<label><input type="checkbox" value="safari+5.1" data-select-id="compare">5.1</label>
+				<label><input type="checkbox" value="safari+6" data-select-id="compare">6</label>
+				<label><input type="checkbox" value="safari+7" data-select-id="compare">7</label>
+			</fieldset>
+			<fieldset>
+				<legend>Opera</legend>
+				<label><input type="checkbox" value="opera+9.5-9.6" data-select-id="compare">9.5-9.6</label>
+				<label><input type="checkbox" value="opera+10.0-10.1" data-select-id="compare">10.0-10.1</label>
+				<label><input type="checkbox" value="opera+10.5" data-select-id="compare">10.5</label>
+				<label><input type="checkbox" value="opera+10.6" data-select-id="compare">10.6</label>
+				<label><input type="checkbox" value="opera+11" data-select-id="compare">11</label>
+				<label><input type="checkbox" value="opera+11.1" data-select-id="compare">11.1</label>
+				<label><input type="checkbox" value="opera+11.5" data-select-id="compare">11.5</label>
+				<label><input type="checkbox" value="opera+11.6" data-select-id="compare">11.6</label>
+				<label><input type="checkbox" value="opera+12" data-select-id="compare">12</label>
+				<label><input type="checkbox" value="opera+12.1" data-select-id="compare">12.1</label>
+				<label><input type="checkbox" value="opera+15" data-select-id="compare">15</label>
+				<label><input type="checkbox" value="opera+16" data-select-id="compare">16</label>
+			</fieldset>
+			<fieldset>
+				<legend>iOS Safari</legend>
+				<label><input type="checkbox" value="ios_saf+3.2" data-select-id="compare">3.2</label>
+				<label><input type="checkbox" value="ios_saf+4.0-4.1" data-select-id="compare">4.0-4.1</label>
+				<label><input type="checkbox" value="ios_saf+4.2-4.3" data-select-id="compare">4.2-4.3</label>
+				<label><input type="checkbox" value="ios_saf+5.0-5.1" data-select-id="compare">5.0-5.1</label>
+				<label><input type="checkbox" value="ios_saf+6.0-6.1" data-select-id="compare">6.0-6.1</label>
+				<label><input type="checkbox" value="ios_saf+7.0" data-select-id="compare">7.0</label>
+			</fieldset>
+			<fieldset>
+				<legend>Opera Mini</legend>
+				<label><input type="checkbox" value="op_mini+5.0-7.0" data-select-id="compare">5.0-7.0</label>
+			</fieldset>
+			<fieldset>
+				<legend>Android Browser</legend>
+				<label><input type="checkbox" value="android+2.1" data-select-id="compare">2.1</label>
+				<label><input type="checkbox" value="android+2.2" data-select-id="compare">2.2</label>
+				<label><input type="checkbox" value="android+2.3" data-select-id="compare">2.3</label>
+				<label><input type="checkbox" value="android+3" data-select-id="compare">3</label>
+				<label><input type="checkbox" value="android+4" data-select-id="compare">4</label>
+				<label><input type="checkbox" value="android+4.1" data-select-id="compare">4.1</label>
+				<label><input type="checkbox" value="android+4.2" data-select-id="compare">4.2</label>
+			</fieldset>
+			<fieldset>
+				<legend>Opera Mobile</legend>
+				<label><input type="checkbox" value="op_mob+10" data-select-id="compare">10</label>
+				<label><input type="checkbox" value="op_mob+11.5" data-select-id="compare">11.5</label>
+				<label><input type="checkbox" value="op_mob+12" data-select-id="compare">12</label>
+				<label><input type="checkbox" value="op_mob+12.1" data-select-id="compare">12.1</label>
+				<label><input type="checkbox" value="op_mob+14" data-select-id="compare">14</label>
+			</fieldset>
+			<fieldset>
+				<legend>Blackberry</legend>
+				<label><input type="checkbox" value="bb+7" data-select-id="compare">7</label>
+				<label><input type="checkbox" value="bb+10" data-select-id="compare">10</label>
+			</fieldset>
+			<fieldset>
+				<legend>Chrome - Android</legend>
+				<label><input type="checkbox" value="and_chr+28" data-select-id="compare">28</label>
+			</fieldset>
+			<fieldset>
+				<legend>Firefox - Android</legend>
+				<label><input type="checkbox" value="and_ff+23" data-select-id="compare">23</label>
+			</fieldset>
+		</div>
 	</div>
 	
 	<div id="content">
@@ -360,8 +487,596 @@
 				</div>
 			</div>
 		</article>
-		<div id="comparison_wrap" style="display:none">
-			<table id="browser_comparison"><caption></caption><thead><tr><th></th><th class="firefox">Firefox 19.0</th><th class="chrome">Chrome 25.0</th></tr></thead><tbody><tr><th><a onclick="caniuse.feat='xhtml';caniuse.setMode('wciu');return false;" href="#feat=xhtml">XHTML served as application/xhtml+xml</a></th><td class="y">Yes</td><td class="y">Yes</td></tr><tr><th><a onclick="caniuse.feat='xhr2';caniuse.setMode('wciu');return false;" href="#feat=xhr2">XMLHttpRequest 2</a></th><td class="y">Yes</td><td class="y">Yes</td></tr><tr><th><a onclick="caniuse.feat='x-doc-messaging';caniuse.setMode('wciu');return false;" href="#feat=x-doc-messaging">Cross-document messaging</a></th><td class="y">Yes</td><td class="y">Yes</td></tr><tr><th><a onclick="caniuse.feat='woff';caniuse.setMode('wciu');return false;" href="#feat=woff">WOFF - Web Open Font Format</a></th><td class="y">Yes</td><td class="y">Yes</td></tr><tr><th><a onclick="caniuse.feat='webworkers';caniuse.setMode('wciu');return false;" href="#feat=webworkers">Web Workers</a></th><td class="y">Yes</td><td class="y">Yes</td></tr><tr><th><a onclick="caniuse.feat='websockets';caniuse.setMode('wciu');return false;" href="#feat=websockets">Web Sockets</a></th><td class="y">Yes</td><td class="y">Yes</td></tr><tr><th><a onclick="caniuse.feat='webm';caniuse.setMode('wciu');return false;" href="#feat=webm">WebM/VP8 video format</a></th><td class="y">Yes</td><td class="y">Yes</td></tr><tr><th><a onclick="caniuse.feat='video';caniuse.setMode('wciu');return false;" href="#feat=video">Video element</a></th><td class="y">Yes</td><td class="y">Yes</td></tr><tr><th><a onclick="caniuse.feat='use-strict';caniuse.setMode('wciu');return false;" href="#feat=use-strict">ECMAScript 5 Strict Mode</a></th><td class="y">Yes</td><td class="y">Yes</td></tr><tr><th><a onclick="caniuse.feat='typedarrays';caniuse.setMode('wciu');return false;" href="#feat=typedarrays">Typed Arrays</a></th><td class="y">Yes</td><td class="y">Yes</td></tr><tr><th><a onclick="caniuse.feat='ttf';caniuse.setMode('wciu');return false;" href="#feat=ttf">TTF/OTF - TrueType and OpenType font support</a></th><td class="y">Yes</td><td class="y">Yes</td></tr><tr><th><a onclick="caniuse.feat='transforms3d';caniuse.setMode('wciu');return false;" href="#feat=transforms3d">CSS3 3D Transforms</a></th><td class="y">Yes</td><td class="y">Yes</td></tr><tr><th><a onclick="caniuse.feat='transforms2d';caniuse.setMode('wciu');return false;" href="#feat=transforms2d">CSS3 Transforms</a></th><td class="y">Yes</td><td class="y">Yes</td></tr><tr><th><a onclick="caniuse.feat='touch';caniuse.setMode('wciu');return false;" href="#feat=touch">Touch events</a></th><td class="y">Yes</td><td class="y">Yes</td></tr><tr><th><a onclick="caniuse.feat='text-overflow';caniuse.setMode('wciu');return false;" href="#feat=text-overflow">CSS3 Text-overflow</a></th><td class="y">Yes</td><td class="y">Yes</td></tr><tr><th><a onclick="caniuse.feat='svg-smil';caniuse.setMode('wciu');return false;" href="#feat=svg-smil">SVG SMIL animation</a></th><td class="y">Yes</td><td class="y">Yes</td></tr><tr><th><a onclick="caniuse.feat='svg-img';caniuse.setMode('wciu');return false;" href="#feat=svg-img">SVG in HTML img element</a></th><td class="y">Yes</td><td class="y">Yes</td></tr><tr><th><a onclick="caniuse.feat='svg-html5';caniuse.setMode('wciu');return false;" href="#feat=svg-html5">Inline SVG in HTML5</a></th><td class="y">Yes</td><td class="y">Yes</td></tr><tr><th><a onclick="caniuse.feat='svg-filters';caniuse.setMode('wciu');return false;" href="#feat=svg-filters">SVG filters</a></th><td class="y">Yes</td><td class="y">Yes</td></tr><tr><th><a onclick="caniuse.feat='svg-css';caniuse.setMode('wciu');return false;" href="#feat=svg-css">SVG in CSS backgrounds</a></th><td class="y">Yes</td><td class="y">Yes</td></tr><tr><th><a onclick="caniuse.feat='svg';caniuse.setMode('wciu');return false;" href="#feat=svg">SVG (basic support)</a></th><td class="y">Yes</td><td class="y">Yes</td></tr><tr><th><a onclick="caniuse.feat='stream';caniuse.setMode('wciu');return false;" href="#feat=stream">getUserMedia/Stream API</a></th><td class="y">Yes</td><td class="y">Yes</td></tr><tr><th><a onclick="caniuse.feat='script-defer';caniuse.setMode('wciu');return false;" href="#feat=script-defer">defer attribute for external scripts</a></th><td class="y">Yes</td><td class="y">Yes</td></tr><tr><th><a onclick="caniuse.feat='script-async';caniuse.setMode('wciu');return false;" href="#feat=script-async">async attribute for external scripts</a></th><td class="y">Yes</td><td class="y">Yes</td></tr><tr><th><a onclick="caniuse.feat='requestanimationframe';caniuse.setMode('wciu');return false;" href="#feat=requestanimationframe">requestAnimationFrame</a></th><td class="y">Yes</td><td class="y">Yes</td></tr><tr><th><a onclick="caniuse.feat='rem';caniuse.setMode('wciu');return false;" href="#feat=rem">rem (root em) units</a></th><td class="y">Yes</td><td class="y">Yes</td></tr><tr><th><a onclick="caniuse.feat='queryselector';caniuse.setMode('wciu');return false;" href="#feat=queryselector">querySelector/querySelectorAll</a></th><td class="y">Yes</td><td class="y">Yes</td></tr><tr><th><a onclick="caniuse.feat='progressmeter';caniuse.setMode('wciu');return false;" href="#feat=progressmeter">Progress &amp; Meter</a></th><td class="y">Yes</td><td class="y">Yes</td></tr><tr><th><a onclick="caniuse.feat='png-alpha';caniuse.setMode('wciu');return false;" href="#feat=png-alpha">PNG alpha transparency</a></th><td class="y">Yes</td><td class="y">Yes</td></tr><tr><th><a onclick="caniuse.feat='ogv';caniuse.setMode('wciu');return false;" href="#feat=ogv">Ogg/Theora video format</a></th><td class="y">Yes</td><td class="y">Yes</td></tr><tr><th><a onclick="caniuse.feat='offline-apps';caniuse.setMode('wciu');return false;" href="#feat=offline-apps">Offline web applications</a></th><td class="y">Yes</td><td class="y">Yes</td></tr><tr><th><a onclick="caniuse.feat='nav-timing';caniuse.setMode('wciu');return false;" href="#feat=nav-timing">Navigation Timing API</a></th><td class="y">Yes</td><td class="y">Yes</td></tr><tr><th><a onclick="caniuse.feat='namevalue-storage';caniuse.setMode('wciu');return false;" href="#feat=namevalue-storage">Web Storage - name/value pairs</a></th><td class="y">Yes</td><td class="y">Yes</td></tr><tr><th><a onclick="caniuse.feat='multibackgrounds';caniuse.setMode('wciu');return false;" href="#feat=multibackgrounds">CSS3 Multiple backgrounds</a></th><td class="y">Yes</td><td class="y">Yes</td></tr><tr><th><a onclick="caniuse.feat='minmaxwh';caniuse.setMode('wciu');return false;" href="#feat=minmaxwh">CSS min/max-width/height</a></th><td class="y">Yes</td><td class="y">Yes</td></tr><tr><th><a onclick="caniuse.feat='matchmedia';caniuse.setMode('wciu');return false;" href="#feat=matchmedia">matchMedia</a></th><td class="y">Yes</td><td class="y">Yes</td></tr><tr><th><a onclick="caniuse.feat='json';caniuse.setMode('wciu');return false;" href="#feat=json">JSON parsing</a></th><td class="y">Yes</td><td class="y">Yes</td></tr><tr><th><a onclick="caniuse.feat='input-placeholder';caniuse.setMode('wciu');return false;" href="#feat=input-placeholder">input placeholder attribute</a></th><td class="y">Yes</td><td class="y">Yes</td></tr><tr><th><a onclick="caniuse.feat='inline-block';caniuse.setMode('wciu');return false;" href="#feat=inline-block">CSS inline-block</a></th><td class="y">Yes</td><td class="y">Yes</td></tr><tr><th><a onclick="caniuse.feat='indexeddb';caniuse.setMode('wciu');return false;" href="#feat=indexeddb">IndexedDB</a></th><td class="y">Yes</td><td class="y">Yes</td></tr><tr><th><a onclick="caniuse.feat='iframe-sandbox';caniuse.setMode('wciu');return false;" href="#feat=iframe-sandbox">sandbox attribute for iframes</a></th><td class="y">Yes</td><td class="y">Yes</td></tr><tr><th><a onclick="caniuse.feat='html5semantic';caniuse.setMode('wciu');return false;" href="#feat=html5semantic">New semantic elements</a></th><td class="y">Yes</td><td class="y">Yes</td></tr><tr><th><a onclick="caniuse.feat='history';caniuse.setMode('wciu');return false;" href="#feat=history">Session history management</a></th><td class="y">Yes</td><td class="y">Yes</td></tr><tr><th><a onclick="caniuse.feat='hashchange';caniuse.setMode('wciu');return false;" href="#feat=hashchange">Hashchange event</a></th><td class="y">Yes</td><td class="y">Yes</td></tr><tr><th><a onclick="caniuse.feat='getelementsbyclassname';caniuse.setMode('wciu');return false;" href="#feat=getelementsbyclassname">getElementsByClassName</a></th><td class="y">Yes</td><td class="y">Yes</td></tr><tr><th><a onclick="caniuse.feat='geolocation';caniuse.setMode('wciu');return false;" href="#feat=geolocation">Geolocation</a></th><td class="y">Yes</td><td class="y">Yes</td></tr><tr><th><a onclick="caniuse.feat='form-validation';caniuse.setMode('wciu');return false;" href="#feat=form-validation">Form validation</a></th><td class="y">Yes</td><td class="y">Yes</td></tr><tr><th><a onclick="caniuse.feat='fontface';caniuse.setMode('wciu');return false;" href="#feat=fontface">@font-face Web fonts</a></th><td class="y">Yes</td><td class="y">Yes</td></tr><tr><th><a onclick="caniuse.feat='font-feature';caniuse.setMode('wciu');return false;" href="#feat=font-feature">Font feature settings</a></th><td class="y">Yes</td><td class="y">Yes</td></tr><tr><th><a onclick="caniuse.feat='filereader';caniuse.setMode('wciu');return false;" href="#feat=filereader">FileReader API</a></th><td class="y">Yes</td><td class="y">Yes</td></tr><tr><th><a onclick="caniuse.feat='fileapi';caniuse.setMode('wciu');return false;" href="#feat=fileapi">File API</a></th><td class="y">Yes</td><td class="y">Yes</td></tr><tr><th><a onclick="caniuse.feat='eventsource';caniuse.setMode('wciu');return false;" href="#feat=eventsource">Server-sent DOM events</a></th><td class="y">Yes</td><td class="y">Yes</td></tr><tr><th><a onclick="caniuse.feat='dragndrop';caniuse.setMode('wciu');return false;" href="#feat=dragndrop">Drag and Drop</a></th><td class="y">Yes</td><td class="y">Yes</td></tr><tr><th><a onclick="caniuse.feat='datauri';caniuse.setMode('wciu');return false;" href="#feat=datauri">Data URLs</a></th><td class="y">Yes</td><td class="y">Yes</td></tr><tr><th><a onclick="caniuse.feat='dataset';caniuse.setMode('wciu');return false;" href="#feat=dataset">dataset &amp; data-* attributes</a></th><td class="y">Yes</td><td class="y">Yes</td></tr><tr><th><a onclick="caniuse.feat='datalist';caniuse.setMode('wciu');return false;" href="#feat=datalist">Datalist element</a></th><td class="y">Yes</td><td class="y">Yes</td></tr><tr><th><a onclick="caniuse.feat='css3-colors';caniuse.setMode('wciu');return false;" href="#feat=css3-colors">CSS3 Colors</a></th><td class="y">Yes</td><td class="y">Yes</td></tr><tr><th><a onclick="caniuse.feat='css-transitions';caniuse.setMode('wciu');return false;" href="#feat=css-transitions">CSS3 Transitions</a></th><td class="y">Yes</td><td class="y">Yes</td></tr><tr><th><a onclick="caniuse.feat='css-textshadow';caniuse.setMode('wciu');return false;" href="#feat=css-textshadow">CSS3 Text-shadow</a></th><td class="y">Yes</td><td class="y">Yes</td></tr><tr><th><a onclick="caniuse.feat='css-table';caniuse.setMode('wciu');return false;" href="#feat=css-table">CSS Table display</a></th><td class="y">Yes</td><td class="y">Yes</td></tr><tr><th><a onclick="caniuse.feat='css-sel3';caniuse.setMode('wciu');return false;" href="#feat=css-sel3">CSS3 selectors</a></th><td class="y">Yes</td><td class="y">Yes</td></tr><tr><th><a onclick="caniuse.feat='css-sel2';caniuse.setMode('wciu');return false;" href="#feat=css-sel2">CSS 2.1 selectors</a></th><td class="y">Yes</td><td class="y">Yes</td></tr><tr><th><a onclick="caniuse.feat='css-resize';caniuse.setMode('wciu');return false;" href="#feat=css-resize">CSS resize property</a></th><td class="y">Yes</td><td class="y">Yes</td></tr><tr><th><a onclick="caniuse.feat='css-repeating-gradients';caniuse.setMode('wciu');return false;" href="#feat=css-repeating-gradients">CSS Repeating Gradients</a></th><td class="y">Yes</td><td class="y">Yes</td></tr><tr><th><a onclick="caniuse.feat='css-opacity';caniuse.setMode('wciu');return false;" href="#feat=css-opacity">CSS3 Opacity</a></th><td class="y">Yes</td><td class="y">Yes</td></tr><tr><th><a onclick="caniuse.feat='css-mediaqueries';caniuse.setMode('wciu');return false;" href="#feat=css-mediaqueries">CSS3 Media Queries</a></th><td class="y">Yes</td><td class="y">Yes</td></tr><tr><th><a onclick="caniuse.feat='css-gradients';caniuse.setMode('wciu');return false;" href="#feat=css-gradients">CSS Gradients</a></th><td class="y">Yes</td><td class="y">Yes</td></tr><tr><th><a onclick="caniuse.feat='css-gencontent';caniuse.setMode('wciu');return false;" href="#feat=css-gencontent">CSS Generated content</a></th><td class="y">Yes</td><td class="y">Yes</td></tr><tr><th><a onclick="caniuse.feat='css-fixed';caniuse.setMode('wciu');return false;" href="#feat=css-fixed">CSS position:fixed</a></th><td class="y">Yes</td><td class="y">Yes</td></tr><tr><th><a onclick="caniuse.feat='css-counters';caniuse.setMode('wciu');return false;" href="#feat=css-counters">CSS Counters</a></th><td class="y">Yes</td><td class="y">Yes</td></tr><tr><th><a onclick="caniuse.feat='css-boxshadow';caniuse.setMode('wciu');return false;" href="#feat=css-boxshadow">CSS3 Box-shadow</a></th><td class="y">Yes</td><td class="y">Yes</td></tr><tr><th><a onclick="caniuse.feat='css-animation';caniuse.setMode('wciu');return false;" href="#feat=css-animation">CSS3 Animation</a></th><td class="y">Yes</td><td class="y">Yes</td></tr><tr><th><a onclick="caniuse.feat='cors';caniuse.setMode('wciu');return false;" href="#feat=cors">Cross-Origin Resource Sharing</a></th><td class="y">Yes</td><td class="y">Yes</td></tr><tr><th><a onclick="caniuse.feat='contenteditable';caniuse.setMode('wciu');return false;" href="#feat=contenteditable">contenteditable attribute (basic support)</a></th><td class="y">Yes</td><td class="y">Yes</td></tr><tr><th><a onclick="caniuse.feat='classlist';caniuse.setMode('wciu');return false;" href="#feat=classlist">classList (DOMTokenList )</a></th><td class="y">Yes</td><td class="y">Yes</td></tr><tr><th><a onclick="caniuse.feat='canvas-text';caniuse.setMode('wciu');return false;" href="#feat=canvas-text">Text API for Canvas</a></th><td class="y">Yes</td><td class="y">Yes</td></tr><tr><th><a onclick="caniuse.feat='canvas';caniuse.setMode('wciu');return false;" href="#feat=canvas">Canvas (basic support)</a></th><td class="y">Yes</td><td class="y">Yes</td></tr><tr><th><a onclick="caniuse.feat='calc';caniuse.setMode('wciu');return false;" href="#feat=calc">calc() as CSS unit value</a></th><td class="y">Yes</td><td class="y">Yes</td></tr><tr><th><a onclick="caniuse.feat='border-radius';caniuse.setMode('wciu');return false;" href="#feat=border-radius">CSS3 Border-radius (rounded corners)</a></th><td class="y">Yes</td><td class="y">Yes</td></tr><tr><th><a onclick="caniuse.feat='border-image';caniuse.setMode('wciu');return false;" href="#feat=border-image">CSS3 Border images</a></th><td class="y">Yes</td><td class="y">Yes</td></tr><tr><th><a onclick="caniuse.feat='bloburls';caniuse.setMode('wciu');return false;" href="#feat=bloburls">Blob URLs</a></th><td class="y">Yes</td><td class="y">Yes</td></tr><tr><th><a onclick="caniuse.feat='blobbuilder';caniuse.setMode('wciu');return false;" href="#feat=blobbuilder">BlobBuilder API</a></th><td class="y">Yes</td><td class="y">Yes</td></tr><tr><th><a onclick="caniuse.feat='background-img-opts';caniuse.setMode('wciu');return false;" href="#feat=background-img-opts">CSS3 Background-image options</a></th><td class="y">Yes</td><td class="y">Yes</td></tr><tr><th><a onclick="caniuse.feat='audio';caniuse.setMode('wciu');return false;" href="#feat=audio">Audio element</a></th><td class="y">Yes</td><td class="y">Yes</td></tr><tr><th><a onclick="caniuse.feat='wordwrap';caniuse.setMode('wciu');return false;" href="#feat=wordwrap">CSS3 Overflow-wrap</a></th><td class="a">Partial</td><td class="y">Yes</td></tr><tr><th><a onclick="caniuse.feat='webgl';caniuse.setMode('wciu');return false;" href="#feat=webgl">WebGL - 3D Canvas graphics</a></th><td class="a">Partial</td><td class="y">Yes</td></tr><tr><th><a onclick="caniuse.feat='wai-aria';caniuse.setMode('wciu');return false;" href="#feat=wai-aria">WAI-ARIA Accessibility features</a></th><td class="y">Yes</td><td class="a">Partial</td></tr><tr><th><a onclick="caniuse.feat='svg-html';caniuse.setMode('wciu');return false;" href="#feat=svg-html">SVG effects for HTML</a></th><td class="y">Yes</td><td class="a">Partial</td></tr><tr><th><a onclick="caniuse.feat='flexbox';caniuse.setMode('wciu');return false;" href="#feat=flexbox">Flexible Box Layout Module</a></th><td class="a">Partial</td><td class="y">Yes</td></tr><tr><th><a onclick="caniuse.feat='css3-boxsizing';caniuse.setMode('wciu');return false;" href="#feat=css3-boxsizing">CSS3 Box-sizing</a></th><td class="y">Yes</td><td class="a">Partial</td></tr><tr><th><a onclick="caniuse.feat='multicolumn';caniuse.setMode('wciu');return false;" href="#feat=multicolumn">CSS3 Multiple column layout</a></th><td class="a">Partial</td><td class="a">Partial</td></tr><tr><th><a onclick="caniuse.feat='matchesselector';caniuse.setMode('wciu');return false;" href="#feat=matchesselector">matchesSelector</a></th><td class="a">Partial</td><td class="a">Partial</td></tr><tr><th><a onclick="caniuse.feat='forms';caniuse.setMode('wciu');return false;" href="#feat=forms">HTML5 form features</a></th><td class="a">Partial</td><td class="a">Partial</td></tr><tr><th><a onclick="caniuse.feat='svg-fonts';caniuse.setMode('wciu');return false;" href="#feat=svg-fonts">SVG fonts</a></th><td class="n">No</td><td class="y">Yes</td></tr><tr><th><a onclick="caniuse.feat='sharedworkers';caniuse.setMode('wciu');return false;" href="#feat=sharedworkers">Shared Web Workers</a></th><td class="n">No</td><td class="y">Yes</td></tr><tr><th><a onclick="caniuse.feat='notifications';caniuse.setMode('wciu');return false;" href="#feat=notifications">Web Notifications</a></th><td class="n">No</td><td class="y">Yes</td></tr><tr><th><a onclick="caniuse.feat='mpeg4';caniuse.setMode('wciu');return false;" href="#feat=mpeg4">MPEG-4/H.264 video format</a></th><td class="n">No</td><td class="y">Yes</td></tr><tr><th><a onclick="caniuse.feat='mathml';caniuse.setMode('wciu');return false;" href="#feat=mathml">MathML</a></th><td class="y">Yes</td><td class="p">No</td></tr><tr><th><a onclick="caniuse.feat='input-range';caniuse.setMode('wciu');return false;" href="#feat=input-range">Range input type</a></th><td class="n">No</td><td class="y">Yes</td></tr><tr><th><a onclick="caniuse.feat='input-number';caniuse.setMode('wciu');return false;" href="#feat=input-number">Number input type</a></th><td class="n">No</td><td class="y">Yes</td></tr><tr><th><a onclick="caniuse.feat='input-color';caniuse.setMode('wciu');return false;" href="#feat=input-color">Color input type</a></th><td class="n">No</td><td class="y">Yes</td></tr><tr><th><a onclick="caniuse.feat='filesystem';caniuse.setMode('wciu');return false;" href="#feat=filesystem">Filesystem &amp; FileWriter API</a></th><td class="n">No</td><td class="y">Yes</td></tr><tr><th><a onclick="caniuse.feat='deviceorientation';caniuse.setMode('wciu');return false;" href="#feat=deviceorientation">Device Orientation events</a></th><td class="n">No</td><td class="y">Yes</td></tr><tr><th><a onclick="caniuse.feat='details';caniuse.setMode('wciu');return false;" href="#feat=details">Details &amp; Summary elements</a></th><td class="p">No</td><td class="y">Yes</td></tr><tr><th><a onclick="caniuse.feat='css-hyphens';caniuse.setMode('wciu');return false;" href="#feat=css-hyphens">CSS Hyphenation</a></th><td class="y">Yes</td><td class="n">No</td></tr><tr><th><a onclick="caniuse.feat='ruby';caniuse.setMode('wciu');return false;" href="#feat=ruby">Ruby annotation</a></th><td class="p">No</td><td class="a">Partial</td></tr><tr><th><a onclick="caniuse.feat='menu';caniuse.setMode('wciu');return false;" href="#feat=menu">Toolbar/context menu</a></th><td class="a">Partial</td><td class="n">No</td></tr><tr><th><a onclick="caniuse.feat='input-datetime';caniuse.setMode('wciu');return false;" href="#feat=input-datetime">Date/time input types</a></th><td class="n">No</td><td class="a">Partial</td></tr><tr><th><a onclick="caniuse.feat='audio-api';caniuse.setMode('wciu');return false;" href="#feat=audio-api">Audio API</a></th><td class="n">No</td><td class="a">Partial</td></tr><tr><th><a onclick="caniuse.feat='object-fit';caniuse.setMode('wciu');return false;" href="#feat=object-fit">CSS3 object-fit/object-position</a></th><td class="n">No</td><td class="n">No</td></tr><tr><th><a onclick="caniuse.feat='css-regions';caniuse.setMode('wciu');return false;" href="#feat=css-regions">CSS Regions</a></th><td class="n">No</td><td class="n">No</td></tr><tr><th><a onclick="caniuse.feat='css-grid';caniuse.setMode('wciu');return false;" href="#feat=css-grid">CSS Grid Layout</a></th><td class="n">No</td><td class="n">No</td></tr></tbody></table></div>
+		
+		<div class="compare-content" id="compare-content" style="display:none">
+			<div class="support_container">
+				<table>
+					<thead>
+						<tr>
+							<th></th>
+							<th class="firefox">Firefox 19.0</th>
+							<th class="chrome">Chrome 25.0</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td colspan="3">
+								<h2>Mixed support</h2>
+							</td>
+						</tr>
+						<tr>
+							<th><a href="#feat=wordwrap">CSS3 Overflow-wrap</a></th>
+							<td class="a">Partial</td>
+							<td class="y">Yes</td>
+						</tr>
+						<tr>
+							<th><a href="#feat=webgl">WebGL - 3D Canvas graphics</a></th>
+							<td class="a">Partial</td>
+							<td class="y">Yes</td>
+						</tr>
+						<tr>
+							<th><a href="#feat=wai-aria">WAI-ARIA Accessibility features</a></th>
+							<td class="y">Yes</td>
+							<td class="a">Partial</td>
+						</tr>
+						<tr>
+							<th><a href="#feat=svg-html">SVG effects for HTML</a></th>
+							<td class="y">Yes</td>
+							<td class="a">Partial</td>
+						</tr>
+						<tr>
+							<th><a href="#feat=flexbox">Flexible Box Layout Module</a></th>
+							<td class="a">Partial</td>
+							<td class="y">Yes</td>
+						</tr>
+						<tr>
+							<th><a href="#feat=css3-boxsizing">CSS3 Box-sizing</a></th>
+							<td class="y x">Yes</td>
+							<td class="a">Partial</td>
+						</tr>
+						<tr>
+							<th><a href="#feat=multicolumn">CSS3 Multiple column layout</a></th>
+							<td class="a x">Partial</td>
+							<td class="a x">Partial</td>
+						</tr>
+						<tr>
+							<th><a href="#feat=matchesselector">matchesSelector</a></th>
+							<td class="a">Partial</td>
+							<td class="a">Partial</td>
+						</tr>
+						<tr>
+							<th><a href="#feat=forms">HTML5 form features</a></th>
+							<td class="a">Partial</td>
+							<td class="a">Partial</td>
+						</tr>
+						<tr>
+							<th><a href="#feat=svg-fonts">SVG fonts</a></th>
+							<td class="n">No</td>
+							<td class="y">Yes</td>
+						</tr>
+						<tr>
+							<th><a href="#feat=sharedworkers">Shared Web Workers</a></th>
+							<td class="n">No</td>
+							<td class="y">Yes</td>
+						</tr>
+						<tr>
+							<th><a href="#feat=notifications">Web Notifications</a></th>
+							<td class="n">No</td>
+							<td class="y">Yes</td>
+						</tr>
+						<tr>
+							<th><a href="#feat=mpeg4">MPEG-4/H.264 video format</a></th>
+							<td class="n">No</td>
+							<td class="y">Yes</td>
+						</tr>
+						<tr>
+							<th><a href="#feat=mathml">MathML</a></th>
+							<td class="y">Yes</td>
+							<td class="p">No</td>
+						</tr>
+						<tr>
+							<th><a href="#feat=input-range">Range input type</a></th>
+							<td class="n">No</td>
+							<td class="y">Yes</td>
+						</tr>
+						<tr>
+							<th><a href="#feat=input-number">Number input type</a></th>
+							<td class="n">No</td>
+							<td class="y">Yes</td>
+						</tr>
+						<tr>
+							<th><a href="#feat=input-color">Color input type</a></th>
+							<td class="n">No</td>
+							<td class="y">Yes</td>
+						</tr>
+						<tr>
+							<th><a href="#feat=filesystem">Filesystem &amp; FileWriter API</a></th>
+							<td class="n">No</td>
+							<td class="y">Yes</td>
+						</tr>
+						<tr>
+							<th><a href="#feat=deviceorientation">Device Orientation events</a></th>
+							<td class="n">No</td>
+							<td class="y">Yes</td>
+						</tr>
+						<tr>
+							<th><a href="#feat=details">Details &amp; Summary elements</a></th>
+							<td class="p">No</td>
+							<td class="y">Yes</td>
+						</tr>
+						<tr>
+							<th><a href="#feat=css-hyphens">CSS Hyphenation</a></th>
+							<td class="y">Yes</td>
+							<td class="n">No</td>
+						</tr>
+						<tr>
+							<th><a href="#feat=ruby">Ruby annotation</a></th>
+							<td class="p">No</td>
+							<td class="a">Partial</td>
+						</tr>
+						<tr>
+							<th><a href="#feat=menu">Toolbar/context menu</a></th>
+							<td class="a">Partial</td>
+							<td class="n">No</td>
+						</tr>
+						<tr>
+							<th><a href="#feat=input-datetime">Date/time input types</a></th>
+							<td class="n">No</td>
+							<td class="a">Partial</td>
+						</tr>
+						<tr>
+							<th><a href="#feat=audio-api">Audio API</a></th>
+							<td class="n">No</td>
+							<td class="a">Partial</td>
+						</tr>
+						<tr>
+							<td colspan="3">
+								<h2>Supported</h2>
+							</td>
+						</tr>
+						<tr>
+							<th><a href="#feat=xhtml">XHTML served as application/xhtml+xml</a></th>
+							<td class="y">Yes</td>
+							<td class="y">Yes</td>
+						</tr>
+						<tr>
+							<th><a href="#feat=xhr2">XMLHttpRequest 2</a></th>
+							<td class="y">Yes</td>
+							<td class="y">Yes</td>
+						</tr>
+						<tr>
+							<th><a href="#feat=x-doc-messaging">Cross-document messaging</a></th>
+							<td class="y">Yes</td>
+							<td class="y">Yes</td>
+						</tr>
+						<tr>
+							<th><a href="#feat=woff">WOFF - Web Open Font Format</a></th>
+							<td class="y">Yes</td>
+							<td class="y">Yes</td>
+						</tr>
+						<tr>
+							<th><a href="#feat=webworkers">Web Workers</a></th>
+							<td class="y">Yes</td>
+							<td class="y">Yes</td>
+						</tr>
+						<tr>
+							<th><a href="#feat=websockets">Web Sockets</a></th>
+							<td class="y">Yes</td>
+							<td class="y">Yes</td>
+						</tr>
+						<tr>
+							<th><a href="#feat=webm">WebM/VP8 video format</a></th>
+							<td class="y">Yes</td>
+							<td class="y">Yes</td>
+						</tr>
+						<tr>
+							<th><a href="#feat=video">Video element</a></th>
+							<td class="y">Yes</td>
+							<td class="y">Yes</td>
+						</tr>
+						<tr>
+							<th><a href="#feat=use-strict">ECMAScript 5 Strict Mode</a></th>
+							<td class="y">Yes</td>
+							<td class="y">Yes</td>
+						</tr>
+						<tr>
+							<th><a href="#feat=typedarrays">Typed Arrays</a></th>
+							<td class="y">Yes</td>
+							<td class="y">Yes</td>
+						</tr>
+						<tr>
+							<th><a href="#feat=ttf">TTF/OTF - TrueType and OpenType font support</a></th>
+							<td class="y">Yes</td>
+							<td class="y">Yes</td>
+						</tr>
+						<tr>
+							<th><a href="#feat=transforms3d">CSS3 3D Transforms</a></th>
+							<td class="y">Yes</td>
+							<td class="y">Yes</td>
+						</tr>
+						<tr>
+							<th><a href="#feat=transforms2d">CSS3 Transforms</a></th>
+							<td class="y">Yes</td>
+							<td class="y">Yes</td>
+						</tr>
+						<tr>
+							<th><a href="#feat=touch">Touch events</a></th>
+							<td class="y">Yes</td>
+							<td class="y">Yes</td>
+						</tr>
+						<tr>
+							<th><a href="#feat=text-overflow">CSS3 Text-overflow</a></th>
+							<td class="y">Yes</td>
+							<td class="y">Yes</td>
+						</tr>
+						<tr>
+							<th><a href="#feat=svg-smil">SVG SMIL animation</a></th>
+							<td class="y">Yes</td>
+							<td class="y">Yes</td>
+						</tr>
+						<tr>
+							<th><a href="#feat=svg-img">SVG in HTML img element</a></th>
+							<td class="y">Yes</td>
+							<td class="y">Yes</td>
+						</tr>
+						<tr>
+							<th><a href="#feat=svg-html5">Inline SVG in HTML5</a></th>
+							<td class="y">Yes</td>
+							<td class="y">Yes</td>
+						</tr>
+						<tr>
+							<th><a href="#feat=svg-filters">SVG filters</a></th>
+							<td class="y">Yes</td>
+							<td class="y">Yes</td>
+						</tr>
+						<tr>
+							<th><a href="#feat=svg-css">SVG in CSS backgrounds</a></th>
+							<td class="y">Yes</td>
+							<td class="y">Yes</td>
+						</tr>
+						<tr>
+							<th><a href="#feat=svg">SVG (basic support)</a></th>
+							<td class="y">Yes</td>
+							<td class="y">Yes</td>
+						</tr>
+						<tr>
+							<th><a href="#feat=stream">getUserMedia/Stream API</a></th>
+							<td class="y">Yes</td>
+							<td class="y">Yes</td>
+						</tr>
+						<tr>
+							<th><a href="#feat=script-defer">defer attribute for external scripts</a></th>
+							<td class="y">Yes</td>
+							<td class="y">Yes</td>
+						</tr>
+						<tr>
+							<th><a href="#feat=script-async">async attribute for external scripts</a></th>
+							<td class="y">Yes</td>
+							<td class="y">Yes</td>
+						</tr>
+						<tr>
+							<th><a href="#feat=requestanimationframe">requestAnimationFrame</a></th>
+							<td class="y">Yes</td>
+							<td class="y">Yes</td>
+						</tr>
+						<tr>
+							<th><a href="#feat=rem">rem (root em) units</a></th>
+							<td class="y">Yes</td>
+							<td class="y">Yes</td>
+						</tr>
+						<tr>
+							<th><a href="#feat=queryselector">querySelector/querySelectorAll</a></th>
+							<td class="y">Yes</td>
+							<td class="y">Yes</td>
+						</tr>
+						<tr>
+							<th><a href="#feat=progressmeter">Progress &amp; Meter</a></th>
+							<td class="y">Yes</td>
+							<td class="y">Yes</td>
+						</tr>
+						<tr>
+							<th><a href="#feat=png-alpha">PNG alpha transparency</a></th>
+							<td class="y">Yes</td>
+							<td class="y">Yes</td>
+						</tr>
+						<tr>
+							<th><a href="#feat=ogv">Ogg/Theora video format</a></th>
+							<td class="y">Yes</td>
+							<td class="y">Yes</td>
+						</tr>
+						<tr>
+							<th><a href="#feat=offline-apps">Offline web applications</a></th>
+							<td class="y">Yes</td>
+							<td class="y">Yes</td>
+						</tr>
+						<tr>
+							<th><a href="#feat=nav-timing">Navigation Timing API</a></th>
+							<td class="y">Yes</td>
+							<td class="y">Yes</td>
+						</tr>
+						<tr>
+							<th><a href="#feat=namevalue-storage">Web Storage - name/value pairs</a></th>
+							<td class="y">Yes</td>
+							<td class="y">Yes</td>
+						</tr>
+						<tr>
+							<th><a href="#feat=multibackgrounds">CSS3 Multiple backgrounds</a></th>
+							<td class="y">Yes</td>
+							<td class="y">Yes</td>
+						</tr>
+						<tr>
+							<th><a href="#feat=minmaxwh">CSS min/max-width/height</a></th>
+							<td class="y">Yes</td>
+							<td class="y">Yes</td>
+						</tr>
+						<tr>
+							<th><a href="#feat=matchmedia">matchMedia</a></th>
+							<td class="y">Yes</td>
+							<td class="y">Yes</td>
+						</tr>
+						<tr>
+							<th><a href="#feat=json">JSON parsing</a></th>
+							<td class="y">Yes</td>
+							<td class="y">Yes</td>
+						</tr>
+						<tr>
+							<th><a href="#feat=input-placeholder">input placeholder attribute</a></th>
+							<td class="y">Yes</td>
+							<td class="y">Yes</td>
+						</tr>
+						<tr>
+							<th><a href="#feat=inline-block">CSS inline-block</a></th>
+							<td class="y">Yes</td>
+							<td class="y">Yes</td>
+						</tr>
+						<tr>
+							<th><a href="#feat=indexeddb">IndexedDB</a></th>
+							<td class="y">Yes</td>
+							<td class="y">Yes</td>
+						</tr>
+						<tr>
+							<th><a href="#feat=iframe-sandbox">sandbox attribute for iframes</a></th>
+							<td class="y">Yes</td>
+							<td class="y">Yes</td>
+						</tr>
+						<tr>
+							<th><a href="#feat=html5semantic">New semantic elements</a></th>
+							<td class="y">Yes</td>
+							<td class="y">Yes</td>
+						</tr>
+						<tr>
+							<th><a href="#feat=history">Session history management</a></th>
+							<td class="y">Yes</td>
+							<td class="y">Yes</td>
+						</tr>
+						<tr>
+							<th><a href="#feat=hashchange">Hashchange event</a></th>
+							<td class="y">Yes</td>
+							<td class="y">Yes</td>
+						</tr>
+						<tr>
+							<th><a href="#feat=getelementsbyclassname">getElementsByClassName</a></th>
+							<td class="y">Yes</td>
+							<td class="y">Yes</td>
+						</tr>
+						<tr>
+							<th><a href="#feat=geolocation">Geolocation</a></th>
+							<td class="y">Yes</td>
+							<td class="y">Yes</td>
+						</tr>
+						<tr>
+							<th><a href="#feat=form-validation">Form validation</a></th>
+							<td class="y">Yes</td>
+							<td class="y">Yes</td>
+						</tr>
+						<tr>
+							<th><a href="#feat=fontface">@font-face Web fonts</a></th>
+							<td class="y">Yes</td>
+							<td class="y">Yes</td>
+						</tr>
+						<tr>
+							<th><a href="#feat=font-feature">Font feature settings</a></th>
+							<td class="y">Yes</td>
+							<td class="y">Yes</td>
+						</tr>
+						<tr>
+							<th><a href="#feat=filereader">FileReader API</a></th>
+							<td class="y">Yes</td>
+							<td class="y">Yes</td>
+						</tr>
+						<tr>
+							<th><a href="#feat=fileapi">File API</a></th>
+							<td class="y">Yes</td>
+							<td class="y">Yes</td>
+						</tr>
+						<tr>
+							<th><a href="#feat=eventsource">Server-sent DOM events</a></th>
+							<td class="y">Yes</td>
+							<td class="y">Yes</td>
+						</tr>
+						<tr>
+							<th><a href="#feat=dragndrop">Drag and Drop</a></th>
+							<td class="y">Yes</td>
+							<td class="y">Yes</td>
+						</tr>
+						<tr>
+							<th><a href="#feat=datauri">Data URLs</a></th>
+							<td class="y">Yes</td>
+							<td class="y">Yes</td>
+						</tr>
+						<tr>
+							<th><a href="#feat=dataset">dataset &amp; data-* attributes</a></th>
+							<td class="y">Yes</td>
+							<td class="y">Yes</td>
+						</tr>
+						<tr>
+							<th><a href="#feat=datalist">Datalist element</a></th>
+							<td class="y">Yes</td>
+							<td class="y">Yes</td>
+						</tr>
+						<tr>
+							<th><a href="#feat=css3-colors">CSS3 Colors</a></th>
+							<td class="y">Yes</td>
+							<td class="y">Yes</td>
+						</tr>
+						<tr>
+							<th><a href="#feat=css-transitions">CSS3 Transitions</a></th>
+							<td class="y">Yes</td>
+							<td class="y">Yes</td>
+						</tr>
+						<tr>
+							<th><a href="#feat=css-textshadow">CSS3 Text-shadow</a></th>
+							<td class="y">Yes</td>
+							<td class="y">Yes</td>
+						</tr>
+						<tr>
+							<th><a href="#feat=css-table">CSS Table display</a></th>
+							<td class="y">Yes</td>
+							<td class="y">Yes</td>
+						</tr>
+						<tr>
+							<th><a href="#feat=css-sel3">CSS3 selectors</a></th>
+							<td class="y">Yes</td>
+							<td class="y">Yes</td>
+						</tr>
+						<tr>
+							<th><a href="#feat=css-sel2">CSS 2.1 selectors</a></th>
+							<td class="y">Yes</td>
+							<td class="y">Yes</td>
+						</tr>
+						<tr>
+							<th><a href="#feat=css-resize">CSS resize property</a></th>
+							<td class="y">Yes</td>
+							<td class="y">Yes</td>
+						</tr>
+						<tr>
+							<th><a href="#feat=css-repeating-gradients">CSS Repeating Gradients</a></th>
+							<td class="y">Yes</td>
+							<td class="y">Yes</td>
+						</tr>
+						<tr>
+							<th><a href="#feat=css-opacity">CSS3 Opacity</a></th>
+							<td class="y">Yes</td>
+							<td class="y">Yes</td>
+						</tr>
+						<tr>
+							<th><a href="#feat=css-mediaqueries">CSS3 Media Queries</a></th>
+							<td class="y">Yes</td>
+							<td class="y">Yes</td>
+						</tr>
+						<tr>
+							<th><a href="#feat=css-gradients">CSS Gradients</a></th>
+							<td class="y">Yes</td>
+							<td class="y">Yes</td>
+						</tr>
+						<tr>
+							<th><a href="#feat=css-gencontent">CSS Generated content</a></th>
+							<td class="y">Yes</td>
+							<td class="y">Yes</td>
+						</tr>
+						<tr>
+							<th><a href="#feat=css-fixed">CSS position:fixed</a></th>
+							<td class="y">Yes</td>
+							<td class="y">Yes</td>
+						</tr>
+						<tr>
+							<th><a href="#feat=css-counters">CSS Counters</a></th>
+							<td class="y">Yes</td>
+							<td class="y">Yes</td>
+						</tr>
+						<tr>
+							<th><a href="#feat=css-boxshadow">CSS3 Box-shadow</a></th>
+							<td class="y">Yes</td>
+							<td class="y">Yes</td>
+						</tr>
+						<tr>
+							<th><a href="#feat=css-animation">CSS3 Animation</a></th>
+							<td class="y">Yes</td>
+							<td class="y">Yes</td>
+						</tr>
+						<tr>
+							<th><a href="#feat=cors">Cross-Origin Resource Sharing</a></th>
+							<td class="y">Yes</td>
+							<td class="y">Yes</td>
+						</tr>
+						<tr>
+							<th><a href="#feat=contenteditable">contenteditable attribute (basic support)</a></th>
+							<td class="y">Yes</td>
+							<td class="y">Yes</td>
+						</tr>
+						<tr>
+							<th><a href="#feat=classlist">classList (DOMTokenList )</a></th>
+							<td class="y">Yes</td>
+							<td class="y">Yes</td>
+						</tr>
+						<tr>
+							<th><a href="#feat=canvas-text">Text API for Canvas</a></th>
+							<td class="y">Yes</td>
+							<td class="y">Yes</td>
+						</tr>
+						<tr>
+							<th><a href="#feat=canvas">Canvas (basic support)</a></th>
+							<td class="y">Yes</td>
+							<td class="y">Yes</td>
+						</tr>
+						<tr>
+							<th><a href="#feat=calc">calc() as CSS unit value</a></th>
+							<td class="y">Yes</td>
+							<td class="y">Yes</td>
+						</tr>
+						<tr>
+							<th><a href="#feat=border-radius">CSS3 Border-radius (rounded corners)</a></th>
+							<td class="y">Yes</td>
+							<td class="y">Yes</td>
+						</tr>
+						<tr>
+							<th><a href="#feat=border-image">CSS3 Border images</a></th>
+							<td class="y">Yes</td>
+							<td class="y">Yes</td>
+						</tr>
+						<tr>
+							<th><a href="#feat=bloburls">Blob URLs</a></th>
+							<td class="y">Yes</td>
+							<td class="y">Yes</td>
+						</tr>
+						<tr>
+							<th><a href="#feat=blobbuilder">BlobBuilder API</a></th>
+							<td class="y">Yes</td>
+							<td class="y">Yes</td>
+						</tr>
+						<tr>
+							<th><a href="#feat=background-img-opts">CSS3 Background-image options</a></th>
+							<td class="y">Yes</td>
+							<td class="y">Yes</td>
+						</tr>
+						<tr>
+							<th><a href="#feat=audio">Audio element</a></th>
+							<td class="y">Yes</td>
+							<td class="y">Yes</td>
+						</tr>
+						<tr>
+							<td colspan="3">
+								<h2>Not supported</h2>
+							</td>
+						</tr>
+						<tr>
+							<th><a href="#feat=object-fit">CSS3 object-fit/object-position</a></th>
+							<td class="n">No</td>
+							<td class="n">No</td>
+						</tr>
+						<tr>
+							<th><a href="#feat=css-regions">CSS Regions</a></th>
+							<td class="n">No</td>
+							<td class="n">No</td>
+						</tr>
+						<tr>
+							<th><a href="#feat=css-grid">CSS Grid Layout</a></th>
+							<td class="n">No</td>
+							<td class="n">No</td>
+						</tr>
+					</tbody>
+				</table>				
+			</div>
 		</div>
 	</div>
 	
@@ -388,7 +1103,102 @@
 		</aside>
 	</footer>
 	
-	<section id="index" style="display: none;" role="navigation">
+	<section id="about" class="page" style="display: none;">
+		<nav>
+			<ul>
+				<li><a href="#" onclick="javascript:toggle('#about');"><i class="icon icon-close"></i> Close</a></li>
+			</ul>
+		</nav>
+		
+		<div class="content">
+			<h1>Can I Use – About</h1>
+			
+			<p>Can I Use provides compatibility tables for support of HTML5, CSS3, SVG and more in desktop and mobile browsers.</p>
+			<h2>FAQ</h2>
+			<p><b>May I use your data in my presentation/article/site, etc?</b><br>
+			Yes, the support data on this site is free to use under the <a href="http://creativecommons.org/licenses/by-nc/3.0/">CC BY-NC 3.0</a> license.</p>
+
+			<p><b>Do you have the data available in a raw format?</b><br>
+			Yes, the raw support data is available on <a href="https://github.com/fyrd/caniuse">GitHub</a> and is updated regularly.</p>
+
+			<p><b>Could you add feature X to the site?</b><br>
+			Adding features takes quite some time and there are many requests for additions. Because of this I use <a href="http://www.google.com/moderator/#15/e=ae425&t=ae425.40">Google Moderator</a> to manage requests. Feel free to add/vote for your feature there.</p>
+
+			<p><b>Which features do you choose to add to this list?</b><br>
+			I use the following criteria:</p>
+			<ol>
+				<li>Useful to web designers/developers</li>
+				<li>Likely to be eventually implemented by the majority of browsers</li>
+				<li>Currently lacking at least one implementation</li>
+			</ol>
+			<p>Most features are added in priority order from <a href="http://www.google.com/moderator/#15/e=ae425&t=ae425.40">this list</a>.</p>
+			
+			<p><b>How do you test support?</b><br>
+			I use a <a href="http://tests.caniuse.com">hand-crafted test suite</a> to test features, which tests for basic support of each feature.</p>
+			
+			<p><b>Where do you get your information for upcoming versions?</b><br>
+			Most information comes directly from the latest developer/preview/nightly builds as seen in this list:</p>
+			<ul>
+				<li>Internet Explorer information is based on any news that comes in (pending public builds for IE10).</li>
+				<li>Future Firefox information is based on features planned for the latest Gecko build.</li>
+				<li>Future Safari information is based on the latest Webkit nightly builds.</li>
+				<li>Chrome information is based on the latest developer preview.</li>
+				<li>Future Opera information is based on any experimental or weekly builds</li>
+			</ul>
+			
+			<p><b>When is a feature considered "supported"?</b><br>
+			When its primary purpose is largely fulfilled. It does not mean it's 100% supported, just that it's usable in most cases.</p>
+			
+			<p><b>How often is this page updated?</b><br>
+			I try to keep it as current as possible, with new information being usually being processed within a few days. Follow the <a href="http://beta.caniuse.com/feed.php">feed</a> if you'd like keep up with all the changes made.</p>
+			
+
+		</div>
+	</section>
+	
+	<section id="news" class="page" style="display: none;">
+		<nav>
+			<ul>
+				<li><a href="#" onclick="javascript:toggle('#news');"><i class="icon icon-close"></i> Close</a></li>
+			</ul>
+		</nav>
+		
+		<div class="content">
+			<h1>Can I Use – News</h1>
+
+			<article>
+				<span class="date">Sep 3, 2013</span>
+				<h3>New browser added: IE Mobile 10</h3>
+				<p>After a long time of requests to add IE Mobile to Can I Use, I'm happy to report that Internet Explorer for Windows Phone 8 was just added to the site!</p>
+				<p>IE Mobile 10 has much of the same support as seen in IE10 for desktop, with a <a href="http://caniuse.com/#compare=ie+10,ie_mob+10">few exceptions</a>.</p>
+				<p>Stay tuned for more and bigger site announcements!</p>
+			</article>
+
+			<article>
+				<span class="date">May 31, 2013</span>
+				<h3>Five new features added: Templates, JPEG-XR, Channel messaging, Opus & Pointer events</h3>
+				<p>Things have been busy both in the background of the caniuse site development as well as on GitHub where over the past month or so contributors have added the following five(!) features:</p>
+				<p><a href="http://caniuse.com/#feat=template">HTML templates</a> - Method of declaring a portion of reusable markup that is parsed but not rendered until cloned.</p>
+				<p><a href="http://caniuse.com/#feat=jpegxr">JPEG XR</a> - The latest JPEG image format of Joint Photographic Experts Group which boasts better compression and supports lossless compression, alpha channel, and 48-bit deep color over normal jpg format.</p>
+				<p><a href="http://caniuse.com/#feat=channel-messaging">Channel messaging</a> - Method for having two-way communication between browsing contexts (using MessageChannel)</p>
+				<p><a href="http://caniuse.com/#feat=opus">Opus audio</a> - Royalty-free open audio codec by Mozilla, which incorporated SILK from Skype and CELT from Xiph.org, to serve higher sound quality and lower latency at the same bitrate.</p>
+				<p><a href="http://caniuse.com/#feat=pointer">Pointer Events</a> - This specification integrates various inputs from mice, touchscreens, and pens, making separate implementations no longer necessary and authoring for cross-device pointers easier.</p>
+				<p>Thanks again to all the wonderful Caniuse GitHub contributors for your additions and updates! In the mean time I've been working heavily behind the scenes on making the site better and more useful to developers, stay tuned for more news on this front.</p>
+			</article>
+
+			<article>
+				<span class="date">Apr 3, 2013</span>
+				<h3>Three new features added: Shadow DOM, WebP images & Intrinsic width & height</h3>
+				<p>Thanks to more user contributions, the following three features were added to the site:</p>
+				<p>- The <a href="http://caniuse.com/#feat=shadowdom">Shadow DOM</a> allows the creation of widgets that use a DOM separate from the host's document DOM</p>
+				<p>- The <a href="http://caniuse.com/#feat=webp">WebP</a> image format that supports both lossy and lossless images at smaller sizes than jpeg or png.</p>
+				<p>- <a href="http://caniuse.com/#feat=intrinsic-width">Intrinsic width &amp; height</a> CSS values like min-content allow more types of layout sized based on content rather than specific measurements.</p>
+				<p>Thanks again to everyone who helped contribute this data!</p></div>
+			</article>
+		</div>
+	</section>
+	
+	<section id="index" class="page" style="display: none;" role="navigation">
 		<nav class="right">
 			<ul>
 				<li><a href="#" onclick="javascript:toggle('#index');"><i class="icon icon-close"></i> Close</a></li>
@@ -398,7 +1208,7 @@
 		<h1>Can I use … Index</h1>
 		<div id="cat_CSS">
 			<h2><a href="/#cats=CSS">CSS</a></h2>
-			<ol>
+			<ul>
 				<li><a href="fontface">@font-face Web fonts</a></li>
 				<li><a href="calc">calc() as CSS unit value</a></li>
 				<li><a href="css-sel2">2.1 selectors</a></li>
@@ -445,11 +1255,11 @@
 				<li class="unoff"><a href="css-reflections">Reflections</a></li>
 				<li class="unoff"><a href="text-stroke">text-stroke</a></li>
 				<li class="unoff"><a href="pointer-events">pointer-events (for HTML)</a></li>
-			</ol>
+			</ul>
 		</div>
 		<div id="cat_JS_API">
-			<h2><a href="/#cats=JS_API">JS API</a></h3>
-			<ol>
+			<h2><a href="/#cats=JS_API">JS API</a></h2>
+			<ul>
 				<li><a href="audio-api">Audio API</a></li>
 				<li><a href="bloburls">Blob URLs</a></li>
 				<li><a href="x-doc-messaging">Cross-document messaging</a></li>
@@ -476,11 +1286,11 @@
 				<li><a href="webworkers">Web Workers</a></li>
 				<li class="unoff"><a href="fullscreen">Full Screen API</a></li>
 				<li class="unoff"><a href="sql-storage">Web SQL Database</a></li>
-			</ol>
+			</ul>
 		</div>
 		<div id="cat_HTML5">
-			<h2><a href="/#cats=HTML5">HTML5</a></h3>
-			<ol>
+			<h2><a href="/#cats=HTML5">HTML5</a></h2>
+			<ul>
 				<li><a href="audio">Audio element</a></li>
 				<li><a href="canvas">Canvas (basic support)</a></li>
 				<li><a href="input-color">Color input type</a></li>
@@ -505,11 +1315,11 @@
 				<li><a href="menu">Toolbar/context menu</a></li>
 				<li><a href="video">Video element</a></li>
 				<li><a href="webgl">WebGL - 3D Canvas graphics</a></li>
-			</ol>
+			</ul>
 		</div>
 		<div id="cat_Other">
-			<h2><a href="/#cats=Other">Other</a></h3>
-			<ol>
+			<h2><a href="/#cats=Other">Other</a></h2>
+			<ul>
 				<li><a href="script-async">async attribute for external scripts</a></li>
 				<li><a href="classlist">classList (DOMTokenList )</a></li>
 				<li><a href="datauri">Data URLs</a></li>
@@ -532,11 +1342,11 @@
 				<li class="unoff"><a href="eot">EOT - Embedded OpenType fonts</a></li>
 				<li class="unoff"><a href="spdy">SPDY networking protocol</a></li>
 				<li class="unoff"><a href="xhtmlsmil">XHTML+SMIL animation</a></li>
-			</ol>
+			</ul>
 		</div>
 		<div id="cat_SVG">
-			<h2><a href="/#cats=SVG">SVG</a></h3>
-			<ol>
+			<h2><a href="/#cats=SVG">SVG</a></h2>
+			<ul>
 				<li><a href="svg-html5">Inline SVG in HTML5</a></li>
 				<li><a href="svg">SVG (basic support)</a></li>
 				<li><a href="svg-html">SVG effects for HTML</a></li>
@@ -545,11 +1355,11 @@
 				<li><a href="svg-css">SVG in CSS backgrounds</a></li>
 				<li><a href="svg-img">SVG in HTML img element</a></li>
 				<li><a href="svg-smil">SVG SMIL animation</a></li>
-			</ol>
+			</ul>
 		</div>
 	</section>
 
-<div class="scripts">
+	<div class="scripts">
 	<script>
 		(function() {
 			var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
@@ -571,6 +1381,29 @@
 	</script>
 	<script>
 		!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+	</script>
+	<script>
+		function toggle(selector) {
+			$selector = document.querySelector(selector);
+			if($selector.style.display == 'none') {
+				$selector.style.display = 'block';
+			} else {
+				$selector.style.display = 'none';
+			}
+		}
+		function show(selector) {
+			document.querySelector(selector).style.display = 'block';
+		}
+		function hide(selector) {
+			document.querySelector(selector).style.display = 'none';
+		}
+		function activetab(el) {
+			var tabs = document.querySelectorAll('.tab');
+			for(var i=0; i<tabs.length; i++) {
+				tabs[i].classList.remove('active');
+			}		
+			el.classList.add('active');
+		}
 	</script>
 </div>
 </body>
