@@ -42,7 +42,7 @@ input[type=checkbox]:focus { outline: none; box-shadow: 0 0 5px 1px lightblue, i
 input[type=range] { -webkit-appearance: none; height: 2px; background: #fff; display: block; margin: 1em 0; width: 70%; }
 input[type=range]::-webkit-slider-thumb { -webkit-appearance: none; background: #db5600; border: 2px solid #fff; height: 20px; width: 20px; border-radius: 99px; cursor: ew-resize; }
 
-.select { background: #fff; display: inline-block; margin: 0 .4em; position: relative; }
+.select { background: #fff; display: inline-block; margin: .4em 0 0; position: relative; }
 .select select { -webkit-appearance: none; background: transparent; margin: 0; border: 0; padding: .2em 1.4em .2em .4em; }
 .select:before { position: absolute; right: 4px; top: 2px; color: #333; }
 

@@ -90,25 +90,21 @@
 			</div>
 		</fieldset>
 		<fieldset id="eras">
-			<legend>Versions shown</legend>
+			<legend>Usage data</legend>
 			<label>
-				Minimum browser usage %:<br>
+				Minimum browser usage: 0.88%<br>
 				<input id="version_threshold" type="range" step="0.1" min="0" max="5" value="0.88">
 			</label>
 			<p class="dim">
-				Threshold set at <span id="usage_val">0.88</span>%<br>
-				Total users not shown is <span id="missing_val">8.1</span>%
+				Total users not shown: <span id="missing_val">8.1</span>%
 			</p>
-			<label><input type="checkbox" id="include_all_mobile" checked> Show all mobile versions</label>		
 		</fieldset>
 		<fieldset id="misc">
 			<legend>Other options</legend>
 			<p>
-				<label><input type="checkbox" value="p"> Accept polyfills</label>
 				<label><input type="checkbox" value="bw_shaded"> Accessible colors</label>
-				<label><input type="checkbox" value="show_conc"> Show conclusions</label>
 			</p>
-			<label>Sort
+			<label>List sort:<br>
 				<div class="select">
 					<select name="sort" onchange="caniuse.MC()">
 						<option value="usr_score">Most users first</option>
