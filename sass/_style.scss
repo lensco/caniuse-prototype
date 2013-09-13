@@ -470,6 +470,7 @@ nav {
 	background: $article;
 	text-align: center;
 	line-height: 1.2;
+	font-size: em(12);
 	
 	button {
 		margin: 10px 10px 0;
@@ -478,9 +479,11 @@ nav {
 	@include tablet {
 		padding: 10px 20px;
 		margin: 0 0 20px;
+		font-size: em(14);
 		}
 	@include tablet-landscape {
 		text-align: left;
+		font-size: em(16);
 		
 		br {
 			display: none

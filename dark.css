@@ -122,10 +122,10 @@ nav .news .date { color: rgba(255, 255, 255, 0.4); }
   #options #eras { width: 22%; }
   #options #misc { width: 18%; padding-right: 0; } }
 
-.country-message { padding: 12px 16px; margin: 0 0 10px; background: #f2e8d5; text-align: center; line-height: 1.2; }
+.country-message { padding: 12px 16px; margin: 0 0 10px; background: #f2e8d5; text-align: center; line-height: 1.2; font-size: 0.75em; }
 .country-message button { margin: 10px 10px 0; }
-@media (min-width: 768px) { .country-message { padding: 10px 20px; margin: 0 0 20px; } }
-@media (min-width: 1024px) { .country-message { text-align: left; }
+@media (min-width: 768px) { .country-message { padding: 10px 20px; margin: 0 0 20px; font-size: 0.875em; } }
+@media (min-width: 1024px) { .country-message { text-align: left; font-size: 1em; }
   .country-message br { display: none; }
   .country-message button { margin: 0 0 0 10px; } }
 
